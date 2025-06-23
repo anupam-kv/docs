@@ -22,19 +22,25 @@
             ]
           },
           {
-            "group": "SirenDocumentation",
+            "group": "Getting Started",
             "pages": [
               "SirenDocumentation/GettingStarted/Overview",
               "SirenDocumentation/GettingStarted/Quick-start-Guide",
               "SirenDocumentation/GettingStarted/Sending-your-first-Notification",
-              "SirenDocumentation/GettingStarted/SendMessageAPIGetreplygetstatus",
+              "SirenDocumentation/GettingStarted/SendMessageAPIGetreplygetstatus"
+            ]
+          },
+          {
+            "group": "Workflows",
+            "pages": [
               "SirenDocumentation/Workflows/WorkflowOverview",
               "SirenDocumentation/Workflows/CreatingWorkflows",
               "SirenDocumentation/Workflows/DesignWorkflowLogic",
               "SirenDocumentation/Workflows/TestTrigger",
               "SirenDocumentation/Workflows/ManageWorkflows"
             ]
-          },
+          },         
+
           {
             "group": "Essentials",
             "pages": [
