@@ -22,6 +22,12 @@
             ]
           },
           {
+            "group": "SirenDocumentation",
+            "pages": [
+              "SirenDocumentation/GettingStarted/01-Overview.mdx"
+            ]
+          },
+          {
             "group": "Essentials",
             "pages": [
               "essentials/markdown",
