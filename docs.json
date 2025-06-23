@@ -24,10 +24,7 @@
           {
             "group": "Getting Started",
             "pages": [
-              "GettingStarted/Overview",
-              "GettingStarted/Quick-start-Guide",
-              "GettingStarted/Sending-your-first-Notification",
-              "GettingStarted/SendMessageAPIGetreplygetstatus"
+              "GettingStarted/Sample"
             ]
           },
           {
