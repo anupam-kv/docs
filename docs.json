@@ -55,8 +55,11 @@
           {
             "group": "Channels & Providers",
             "pages": [
+              "docs/04 - Channels & Providers/Channel Overview",
+              "docs/04 - Channels & Providers/Channel Details",
+              "docs/04 - Channels & Providers/Provider Overview",
+              "docs/04 - Channels & Providers/Provider Details",
               "docs/04 - Channels & Providers/Choose a channel",
-              "docs/04 - Channels & Providers/Channel Integration",
               {
                 "group": "Channel Integration",
                 "pages": [
@@ -67,46 +70,72 @@
                   "docs/04 - Channels & Providers/02 - Channel Integration/SMS Channel",
                   "docs/04 - Channels & Providers/02 - Channel Integration/WhatsApp Channel"
                 ]
-              },
-              "docs/04 - Channels & Providers/Channels & Providers"
+              }
             ]
           },
           {
-            "group": "Features",
+            "group": "Webhook",
             "pages": [
-              "docs/02 - Features/Workspaces",
-              "docs/02 - Features/Dashboard",
-              "docs/02 - Features/Webhook",
-              "docs/02 - Features/Campaigns",
-              "docs/02 - Features/MCP",
-              "docs/02 - Features/AI Agent toolkit"
+              "docs/Webhook"
             ]
           },
           {
-            "group": "Processes",
+            "group": "Campaigns",
             "pages": [
-              "docs/03 - Processes/Workflow",
-              "docs/03 - Processes/Campaign"
+              "docs/05 - Campaigns/Overview",
+              "docs/05 - Campaigns/Running Campaign",
+              "docs/05 - Campaigns/Cohort & users",
+              "docs/05 - Campaigns/How to view campaign analytics"
+            ]
+          },
+          {
+            "group": "Monitoring",
+            "pages": [
+              "docs/Monitoring/Workspace Overview",
+              "docs/Monitoring/02 - Dashboard/01 - Overview",
+              "docs/Monitoring/02 - Dashboard/02 - Dashboard UI"
             ]
           },
           {
             "group": "Notifications",
             "pages": [
-              "docs/04 - Notification Logs/Notification Lifecycle",
-              "docs/04 - Notification Logs/Log Export"
+              "docs/06 - Notification Logs/01 - Notification Lifecycle",
+              "docs/06 - Notification Logs/02 - Log Export"
             ]
           },
           {
             "group": "User Management",
             "pages": [
-              "docs/05 - Managing user accounts/Settings and configuration",
-              "docs/05 - Managing user accounts/Access details"
+              "docs/09 - Managing user accounts/01 - Settings and configuration",
+              "docs/09 - Managing user accounts/02 - Access details"
             ]
           },
           {
             "group": "Configurations",
             "pages": [
-              "docs/06 - Configurations/Slack-app-configuration"
+              "docs/08 - Configurations/Slack-app-configuration"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "MCP",
+        "groups": [
+          {
+            "group": "MCP",
+            "pages": [
+              "docs/MCP"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "AI Agent Toolkit",
+        "groups": [
+          {
+            "group": "AI Agent Toolkit",
+            "pages": [
+              "docs/AI Agent toolkit"
             ]
           }
         ]
@@ -129,12 +158,6 @@
             "group": "SDKs & Libraries",
             "pages": [
               "docs/SDKs and Libraries"
-            ]
-          },
-          {
-            "group": "Agent Toolkit",
-            "pages": [
-              "docs/Agent Toolkit"
             ]
           }
         ]
