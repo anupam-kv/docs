@@ -1,0 +1,29 @@
+---
+sidebar_position: 1
+---
+
+
+Understanding the lifecycle of notifications is crucial for interpreting event analytics and dashboard details. Let's explore each stage:
+
+## Notification Status Overview
+
+| **Channel**   | **Submitted** | **Delivered** | **Read/Open**      | **Clicked** |
+|---------------|---------------|----------------|---------------------|--------------|
+| SMS           | ✅             | ✅              | ❌                  | ❌            |
+| WhatsApp*     | ✅             | ✅              | ✅ (Read)           | ❌            |
+| Email         | ✅             | ✅              | ✅ (Open)           | ✅            |
+| Slack         | ✅             | ❌              | ❌                  | ❌            |
+| Teams         | ✅             | ❌              | ❌                  | ❌            |
+| Discord       | ✅             | ❌              | ❌                  | ❌            |
+| InApp         | ✅             | ✅              | ✅ (Read)           | ❌            |
+| Push (SDK)    | ✅             | ✅              | ❌                  | ✅            |
+
+### Status Definitions
+
+- **Submitted:** The notification has been submitted for delivery.
+- **Delivered:** The notification has been successfully delivered to the recipient's device.
+- **Read/Open:** The notification has been opened or read by the recipient.
+- **Clicked:** The recipient has clicked on the notification.
+
+> **Note:**  
+> *WhatsApp will show "Read" only if the recipient has "Read Receipts" turned on.

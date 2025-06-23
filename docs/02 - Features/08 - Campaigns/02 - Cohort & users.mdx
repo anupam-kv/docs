@@ -1,0 +1,60 @@
+---
+sidebar_position: 2
+---
+
+# Cohorts and Users
+
+## What is a Cohort?
+
+In Siren, a **cohort** refers to a specific group of users targeted with a common message.
+
+These users are grouped together based on shared attributes or behaviors—such as sign-up date, location, activity, or custom tags. A cohort represents a segment of users that share a defined context or intent for communication.
+
+For example:
+- Users who installed the app in the last 7 days  
+- Premium users who haven’t logged in this month  
+- All users in a specific region
+
+Cohorts enable personalized, context-aware messaging at scale—allowing efficient delivery of relevant content to the right audience without repeated manual segmentation.
+
+
+---
+
+## Types of User Cohorts in Siren
+
+Siren supports multiple ways to define and manage user cohorts, giving teams flexibility to work with data from different sources.
+
+### 1. Manual or UI-Based Cohorts
+
+This is the simplest cohort type, suitable for one-off campaigns or when you're working with static user lists. Users can be:
+
+- Uploaded via CSV
+- Added manually through the Siren interface
+
+This approach is ideal for teams who don’t need dynamic cohort updates or who are working outside of automated data systems.
+
+### 2. Mixpanel Cohorts
+
+[Mixpanel](https://mixpanel.com) is a leading product analytics platform used to understand user interactions within applications.
+
+Siren integrates with Mixpanel to automatically import cohorts that have already been created there. This enables seamless targeting based on real-time behavioral data without duplication of effort.
+
+For example, a cohort like _“Users who added to cart but didn’t purchase”_ in Mixpanel can be directly synced with Siren, allowing teams to send timely and relevant nudges or offers.
+
+### 3. Datasource-Driven Cohorts
+
+For teams that rely on internal databases or cloud data warehouses, Siren offers native integrations with common data systems including:
+
+- **Databases**: PostgreSQL, MySQL  
+- **Warehouses**: Amazon Redshift, Google BigQuery, Snowflake  
+
+These integrations allow you to define dynamic cohorts based on live production or analytical data, ensuring that your targeting is always up-to-date and reflective of real user behavior.
+
+---
+
+## Summary
+
+Cohorts are a foundational concept in Siren, enabling smarter, data-driven engagement strategies. Whether you're managing user lists manually or syncing behavior-based groups from tools like Mixpanel or your own database, Siren gives you the flexibility to organize, segment, and communicate with users more effectively.
+
+Further details on cohort workflows, setup, and usage will be provided in the [Cohort Setup](#).
+

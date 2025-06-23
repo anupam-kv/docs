@@ -11,42 +11,102 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
-          {
-            "group": "Get Started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
-          },
           {
             "group": "Getting Started",
             "pages": [
-              "GettingStarted/Sample"
+              "docs/01 - Getting Started/Overview",
+              "docs/01 - Getting Started/Quick-start-Guide",
+              "docs/01 - Getting Started/Sending-your-first-Notification",
+              "docs/01 - Getting Started/Send Message API, Get reply, get status"
             ]
           },
           {
             "group": "Workflows",
             "pages": [
-              "Workflows/WorkflowOverview",
-              "Workflows/CreatingWorkflows",
-              "Workflows/DesignWorkflowLogic",
-              "Workflows/TestTrigger",
-              "Workflows/ManageWorkflows"
+              "docs/02 - Workflows/Workflow Overview",
+              "docs/02 - Workflows/Creating Workflows",
+              "docs/02 - Workflows/Design Workflow Logic",
+              "docs/02 - Workflows/Test & Trigger",
+              "docs/02 - Workflows/Manage Workflows"
             ]
-          },         
-
+          },
           {
             "group": "Templates",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "docs/03 - Templates/Overview",
+              {
+                "group": "Creating Template",
+                "pages": [
+                  "docs/03 - Templates/Creating Template/Dynamic Chat Template",
+                  "docs/03 - Templates/Creating Template/Email Template",
+                  "docs/03 - Templates/Creating Template/In-App Template",
+                  "docs/03 - Templates/Creating Template/Line Template",
+                  "docs/03 - Templates/Creating Template/Push Notification Template",
+                  "docs/03 - Templates/Creating Template/SMS Template",
+                  "docs/03 - Templates/Creating Template/Whatsapp Template"
+                ]
+              },
+              "docs/03 - Templates/Duplicate Template",
+              "docs/03 - Templates/Tag Template"
+            ]
+          },  
+          {
+            "group": "Channels & Providers",
+            "pages": [
+              "docs/04 - Channels & Providers/Choose a channel",
+              "docs/04 - Channels & Providers/Channel Integration",
+              {
+                "group": "Channel Integration",
+                "pages": [
+                  "docs/04 - Channels & Providers/02 - Channel Integration/Chat Channel",
+                  "docs/04 - Channels & Providers/02 - Channel Integration/Email Channel",
+                  "docs/04 - Channels & Providers/02 - Channel Integration/In-App Channel",
+                  "docs/04 - Channels & Providers/02 - Channel Integration/Push Notification Channel",
+                  "docs/04 - Channels & Providers/02 - Channel Integration/SMS Channel",
+                  "docs/04 - Channels & Providers/02 - Channel Integration/WhatsApp Channel"
+                ]
+              },
+              "docs/04 - Channels & Providers/Channels & Providers"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "docs/02 - Features/Workspaces",
+              "docs/02 - Features/Dashboard",
+              "docs/02 - Features/Webhook",
+              "docs/02 - Features/Campaigns",
+              "docs/02 - Features/MCP",
+              "docs/02 - Features/AI Agent toolkit"
+            ]
+          },
+          {
+            "group": "Processes",
+            "pages": [
+              "docs/03 - Processes/Workflow",
+              "docs/03 - Processes/Campaign"
+            ]
+          },
+          {
+            "group": "Notifications",
+            "pages": [
+              "docs/04 - Notification Logs/Notification Lifecycle",
+              "docs/04 - Notification Logs/Log Export"
+            ]
+          },
+          {
+            "group": "User Management",
+            "pages": [
+              "docs/05 - Managing user accounts/Settings and configuration",
+              "docs/05 - Managing user accounts/Access details"
+            ]
+          },
+          {
+            "group": "Configurations",
+            "pages": [
+              "docs/06 - Configurations/Slack-app-configuration"
             ]
           }
         ]
@@ -57,40 +117,40 @@
           {
             "group": "API Documentation",
             "pages": [
-              "api-reference/introduction"
+              "docs/API References"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "SDK & Libraries",
+        "groups": [
+          {
+            "group": "SDKs & Libraries",
+            "pages": [
+              "docs/SDKs and Libraries"
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "Agent Toolkit",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "docs/Agent Toolkit"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "groups": [
+          {
+            "group": "Release Notes",
+            "pages": [
+              "docs/Change-Log"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",

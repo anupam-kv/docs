@@ -1,0 +1,90 @@
+---
+sidebar_position: 6
+---
+
+## MSG91 Integration
+
+**_Prerequisites:_**  
+You will need an active WhatsApp number as well as templates pre-configured in your MSG91 account.
+
+![MSG](../../../Images/Providers/Integrations/Whatsapp/msg91.png)
+
+#### Integration Setup
+
+To integrate your MSG91 account with Siren for WhatsApp messaging, follow these steps:
+
+1. **Navigate to Providers:** Access the **Providers** section in your Siren dashboard.  
+2. **Select WhatsApp Channel:** Choose the **WhatsApp** channel.  
+3. **Choose MSG91:** Locate **MSG91** in the list of providers and click on **"Add Account"**.  
+4. **Fill in Account Details:** A pop-up window will appear. Enter the following details:
+   - **Custom Name:** Provide a name for easy identification within Siren's interface.
+   - **Auth Key:** Enter the Auth Key from your MSG91 account.  
+     You can find this in the **Configurations** section, under **"Auth Key"**.  
+     Create a new one or use an existing one.
+   - **From:** Enter the **Sender ID** that you want to use.
+   - **Webhook Path:** Copy this **webhook path** and set it in the **MSG91 webhook URL**.  
+5. **Save Configuration:** Click on **"Save"** to save your MSG91 account configuration.
+
+---
+
+By following these steps, you can seamlessly integrate your **MSG91** account with **Siren** for effective WhatsApp communication.
+
+
+## Meta Integration
+
+**_Prerequisites:_**  
+You will need an active WhatsApp number as well as templates pre-configured in your Meta account.
+
+#### Integration Setup
+
+To integrate your Meta account with Siren for WhatsApp messaging, follow these steps:
+
+1. **Navigate to Providers:** Access the **Providers** section in your Siren dashboard.  
+2. **Select WhatsApp Channel:** Choose the **WhatsApp** channel.  
+3. **Choose Meta:** Locate **Meta** in the list of providers and click on **"Add Account"**.  
+4. **Fill in Account Details:** A pop-up window will appear. Enter the following details:
+   - **Custom Name:** Provide a name for easy identification within Siren's interface.
+   - **Phone Number ID:** Enter the **Sender ID** that you want to use.
+   - **Access Token:**  
+     To access your **Access Token**, go to **System Users** in your Meta dashboard and click **"Generate New Token."**  
+     This token serves for authentication. **Keep it secure and do not share it publicly.**
+   - **App Secret:**  
+     Go to your app settings and select **"Basic Settings"** from the left panel.  
+     This will display your **App Secret**. **Keep it confidential and never share it publicly.**
+5. **Save Configuration:** Click on **"Save"** to save your Meta account configuration.
+
+---
+
+
+>**_Note:_**
+In some cases, if a message is read shortly after delivery, **Meta may not send a separate delivery notification**.
+
+
+
+## Twilio Integration
+
+**_Prerequisites:_**  
+Ensure you have an active WhatsApp number and templates pre-configured in your Twilio account.
+
+![Twilio](../../../Images/Providers/Integrations/Whatsapp/twilio.png)
+
+
+#### Integration Setup
+
+To set up the Twilio integration for WhatsApp messaging in Siren, follow these steps:
+
+1. **Navigate to Providers:** Go to the **Providers** section in your Siren dashboard.  
+2. **Select WhatsApp Channel:** Choose the **WhatsApp** channel.  
+3. **Choose Twilio:** Select **Twilio** from the list of available providers and click on **"Add Account"**.  
+4. **Provide Account Details:** A pop-up window will appear. Fill in the required details:
+   - **Custom Name:** Assign a name for easy identification within Siren's interface.
+   - **Account SID:** Find this in your Twilio account under **Account tab > API Keys and Tokens**. Use the **live credentials**.
+   - **Auth Token:** Obtain this from the same location. Use the **eye icon** to reveal the token and ensure it's the **live credentials**.
+   - **From:** Enter your **Twilio registered phone number**.
+   - **Messaging Service SID:** In your Twilio account, go to **Develop > Messaging > Services**. Create a new Messaging Service or use an existing one.
+   - **Webhook Path:** Copy this webhook path and set it in the **Twilio webhook URL**.
+5. **Save Configuration:** Click on **"Save"** to save your Twilio account configuration.
+
+---
+
+By following these steps, you can seamlessly integrate your Twilio account with Siren for effective WhatsApp communication.

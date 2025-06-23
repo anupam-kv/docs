@@ -1,0 +1,66 @@
+---
+sidebar_position: 1
+---
+
+# Slack App Configuration
+
+Before integrating Slack with Siren, you'll need to set up your Slack App correctly. Follow the steps below to configure the necessary settings.
+
+---
+
+## Step 1: Create the Slack App
+
+1. Go to the [Slack API: Your Apps Dashboard](https://api.slack.com/apps).
+2. Click **"Create New App"**.
+3. Choose **"From scratch"**.
+4. Enter:
+   - **App Name** (e.g., `My Slack Bot`)
+   - **Development Slack Workspace** (where the app will be installed)
+5. Click **Create App**.
+
+---
+
+## Step 2: Configure App Features
+
+Depending on your use case, you may enable one or more of the following features:
+
+### 2.1 OAuth & Permissions
+
+1. Navigate to **OAuth & Permissions**.
+2. Under **Scopes**, add the relevant permissions:
+   - **Bot Token Scopes;** See the table below.
+
+   | **OAuth Scope**         | **Description**                                                                                   |
+   |-------------------------|---------------------------------------------------------------------------------------------------|
+   | `app_mentions:read`     | View messages that directly mention `@siren-test` in conversations that the app is in             |
+   | `channels:history`      | View messages and other content in public channels that siren-test has been added to             |
+   | `chat:write`            | Send messages as `@siren-test`                                                                    |
+   | `files:read`            | View files shared in channels and conversations that siren-test has been added to                |
+   | `im:history`            | View messages and other content in direct messages that siren-test has been added to             |
+   | `im:write`              | Start direct messages with people                                                                 |
+   | `incoming-webhook`      | Post messages to specific channels in Slack                                                       |
+   | `mpim:write`            | Start group direct messages with people                                                           |
+   | `reactions:read`        | View emoji reactions and their associated content in channels and conversations siren-test is in |
+   | `users:read`            | View people in a workspace                                                                        |
+   | `users:read.email`      | View email addresses of people in a workspace                                                     |
+
+   - **User Token Scopes** (if needed)
+3. Save your changes.
+
+### 2.2 Event Subscriptions (Optional)
+
+1. Enable **Event Subscriptions** to receive real-time updates.
+2. Add your **Request URL** (this should point to your server endpoint that handles Slack events).
+3. Subscribe to relevant **Bot Events**, such as:
+   - `message.channels`
+   - `message.groups`
+   - `reaction_added`
+   - *(Add others as needed for your app functionality)*
+
+### 2.3 Interactivity & Shortcuts (Optional)
+
+1. Enable **Interactivity**.
+2. Set your **Request URL** for handling interactive components like button clicks, menus, etc.
+
+
+Once your Slack App is set up and configured, head over to the [Slack Integration](../03%20-%20Processes/01%20-%20Providers%20&%20Channels/02%20-%20Channel%20Integration/01%20-%20Chat%20Channel.md#Slack-Integration) section to complete the integration within Siren.

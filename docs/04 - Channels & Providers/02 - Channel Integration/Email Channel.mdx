@@ -1,0 +1,127 @@
+---
+sidebar_position: 2
+---
+
+## Gmail Integration
+
+**_Prerequisite:_**
+Ensure you have an account already set up in Gmail.
+
+![gmail integration screenshot](../../../Images/Providers/Integrations/Email/gmail.png)
+
+#### Integration Setup
+
+To integrate your Gmail account with Siren for seamless email communication, follow these steps:
+
+1. **Access Providers**: Navigate to the Providers section in your Siren dashboard.
+2. **Select Email Channel**: Choose the Email channel from the list of available options.
+3. **Choose Gmail**: Locate Gmail in the list of providers and click on **Add Account**.
+4. **Enter Account Details**: A pop-up window will appear. Fill in the required information:
+
+    - **Custom Name**: Assign a name for easy identification within Siren's interface.  
+    - **App Password**: Access your Google Account settings, go to **Security** section, enable **2-Step Verification,** scroll to **App passwords,** name the app, and click **Generate** to create the password.  
+    - **From Email**: Enter the email address from which emails will be sent.  
+    - **From Name**: Optionally, specify the name to be displayed in the "From" field to recipients.  
+    - **Content Type**: Choose between **Text/Plain** or **Text/HTML** depending on the content format of your emails.  
+    - **Reply To**: Optionally, provide an alternate email address for recipients to reply to.
+
+5. **Save Configuration**: Click on **Save** to save your configuration.
+
+Following these steps ensures a smooth setup of your Gmail integration in Siren, enabling efficient email communication with your contacts.
+
+> **_Note:_**
+By default, Gmail does not provide message delivery status, and this feature is not configurable.
+
+## SendGrid Integration
+
+**_Prerequisite:_**
+Ensure you have an account already set up in SendGrid.
+
+![sendgrid integration screenshot](../../../Images/Providers/Integrations/Email/sendGrid.png)
+
+
+#### Integration Setup
+
+To integrate your SendGrid account with Siren, follow these steps:
+
+1. **Navigate to Providers**: Go to the Providers section in your Siren dashboard.  
+2. **Select Email Channel**: Choose the Email channel.  
+3. **Choose SendGrid**: Locate SendGrid in the list of providers and click on **"Add Account"**.  
+4. **Fill in Account Details**: A pop-up window will appear. Enter the following details:  
+    - **Custom Name**: Provide a name for easy identification within Siren's interface.  
+    - **API Key**: Generate an API Key in your SendGrid account.  
+      - Navigate to the **Settings** tab in the left-hand navigation menu.  
+      - Click on **"API Keys"** in the sub-menu.  
+      - Create a new API Key or use a previously generated one.  
+    - **From Email**: Copy the Sender details from your SendGrid account.  
+      - Alternatively, add a domain or a single user on SendGrid and enter it into the "From Email" field in Siren.  
+    - **From Name**: Enter the name associated with the sender's email provided in the "From Email" field.  
+    - **Content Type**: Choose between **"Text/Plain"** or **"Text/HTML"** based on your email content format.  
+    - **Reply To**: Optionally, enter an alternate email ID for recipients to reply to.  
+    - **Webhook Verification Key**: Enter the webhook signing key for your configured webhook URL.  
+
+5. **Save Configuration**: Click on **"Save"** to save your SendGrid account configuration.
+
+By following these steps, you can seamlessly integrate your SendGrid account with Siren for effective email communication.
+
+
+## Mailchimp Integration
+
+**_Prerequisite:_**
+Ensure you have an account already set up in Mailchimp.
+
+![mailchimp](../../../Images/Providers/Integrations/Email/mailChimp.png)
+
+
+#### Integration Setup
+
+Follow these steps to integrate your Mailchimp account with Siren:
+
+1. **Access Providers**: Navigate to the **Providers** section in your Siren dashboard.  
+2. **Select Email Channel**: Choose the **Email** channel from the list of available options.  
+3. **Choose Mailchimp**: Locate **Mailchimp** in the list of providers and click on **Add Account**.  
+4. **Enter Account Details**: A pop-up window will appear. Fill in the required information:  
+    - **Custom Name**: Assign a name for easy identification within Siren's interface.  
+    - **API Key**:  
+      - Log in to your Mailchimp account and generate an API Key.  
+      - Navigate to the **Transactional emai** tab and click on the **Launch App** button.  
+      - From the left navigation pane, click on **Settings**, then find the **API Keys** section and create a new API Key.  
+    - **From Email**: Enter the email address you want to use as the sender.  
+      - Ensure this email ID is whitelisted in the **Domains** section of Mailchimp.  
+    - **From Name**: Enter the name associated with the sender’s signature entered in the "From Email" field.  
+    - **Content Type**: Choose between **Text/Plain** or **Text/HTML** based on your email content format.  
+    - **Webhook Verification Key**: Enter the webhook signing key for your configured webhook URL.  
+5. **Save Configuration**: Once you've entered all required details, click on **Save** to save your configuration.
+
+By following these steps, you can seamlessly integrate your Mailchimp account with Siren for effective email communication.
+
+## Amazon SES Integration
+
+**_Prerequisite:_**
+Ensure you have an account already set up in Amazon SES.
+
+![Amazon SES](../../../Images/Providers/Integrations/Email/ses.png)
+
+#### Integration Setup
+
+To integrate your Amazon SES account with Siren, follow these steps:
+
+1. **Navigate to Providers**: Go to the **Providers** section in your Siren dashboard.
+
+2. **Select Email Channel**: Choose the **Email** channel.
+
+3. **Choose SES**: Locate **SES** in the list of providers and click on **Add Account**.
+
+4. **Fill in Account Details**: A pop-up window will appear. Enter the following details:
+   - **Custom Name**: Provide a name for easy identification within Siren's interface.
+   - **Access Key**: Log into your Amazon AWS account and navigate to **Security Credentials** under your account menu. Find **Access Keys** and enter the details.
+   - **Secret Key**: Retrieve this from the same location as the Access Key.
+   - **Region**: Find the region in your Amazon AWS account, either in the browser URL or by selecting it from the drop-down next to your username in the AWS console.
+   - **From Email**: Enter the email address from which emails will be sent. This must be an email ID with a domain registered with Amazon SES.
+   - **From Name**: Enter the name to be displayed in the **From** line.
+   - **Reply To** *(Optional)*: Enter an alternate email ID for recipients to reply to. This can be different from the "From" email ID.
+   - **Content-Type**: Choose between **Text/Plain** or **Text/HTML** based on your email content format.
+
+5. **Save Configuration**: Click on **Save** to save your Amazon SES account configuration.
+
+By following these steps, you can seamlessly integrate your Amazon SES account with Siren for effective email communication.
