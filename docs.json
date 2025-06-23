@@ -24,7 +24,15 @@
           {
             "group": "SirenDocumentation",
             "pages": [
-              "SirenDocumentation/GettingStarted/01-Overview"
+              "SirenDocumentation/GettingStarted/Overview",
+              "SirenDocumentation/GettingStarted/Quick-start-Guide",
+              "SirenDocumentation/GettingStarted/Sending-your-first-Notification",
+              "SirenDocumentation/GettingStarted/SendMessageAPIGetreplygetstatus",
+              "SirenDocumentation/Workflows/WorkflowOverview",
+              "SirenDocumentation/Workflows/CreatingWorkflows",
+              "SirenDocumentation/Workflows/DesignWorkflowLogic",
+              "SirenDocumentation/Workflows/TestTrigger",
+              "SirenDocumentation/Workflows/ManageWorkflows"
             ]
           },
           {
