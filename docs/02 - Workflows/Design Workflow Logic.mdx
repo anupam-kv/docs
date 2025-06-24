@@ -8,45 +8,51 @@ sidebar_position: 3
 ---
 ## CONTROLS Configuration
 
-### Switch Statement
-The switch statement facilitates conditional branching based on the value of a specified input parameter.
+### Switch Node
 
+Use the **Switch Node** when you want to handle multiple possible values for a given input. You define an input parameter, then add different cases under it—each with its own action. At runtime, the node checks the value and routes the workflow to the matching case.
 #### Input Parameter
-Ensure the input parameter for the switch statement is a variable path, prefixed with `$` to reference the appropriate path from the request JSON or HTTP node response.
 
-#### Cases Handling
-The switch statement supports up to 9 cases, including the default case.  
-If the number of cases exceeds 9, consider extending the default case to another switch statement for better organization.
+Set the input parameter using a variable path. Prefix it with `${workflow.input}` to reference a value from the incoming request JSON or a previous HTTP node response.  
+_Example: `${workflow.input.user.status}`_
+
+#### Handling Cases
+
+- You can define up to **9 cases**, including a **default case**.
+- Need more than 9? Use the default case to link to another Switch Node for cleaner handling.
+
 ![Switch-control](../Images/Workflow/switchConfiguration.png)
 
->**_Note:_** Structuring the switch statement efficiently is crucial for clear and concise handling of each case, ensuring the integrity of your workflow.
-
-
-### If Statement
-The if statement enables conditional execution of code based on specified conditions.
-
-#### Usage
-Define conditions using the following components:
-- **Condition Path**: The path to the variable in the JSON data or HTTP node response.  
-- **Variable Type**: Specify the type of variable being evaluated (e.g., string, number, boolean).  
-- **Operation**: Define the comparison operation to be performed (e.g., equals, greater than, less than).  
-- **Value**: Provide the value to be compared against the variable.  
-
-Multiple conditions can be coupled using `and` and `or` operators.
-
-If the condition evaluates to true, the path marked as true will be executed; otherwise, the false path will be executed.
-![Switch-control](../Images/Workflow/ifNodeConfiguration.png)
-
->**_Note:_** Utilize if statements judiciously, ensuring accurate condition setup and clear execution paths to maintain the logic flow of your workflow.
+> **💡 Tip:** Keep your switch logic simple and readable. A well-structured Switch Node helps avoid messy branching and keeps your workflow easy to debug.
 
 ---
-## Add Chat Node
+
+### If Node
+
+Use the If Node when you need to make a decision in your workflow — basically, “if this is true, do that; if not, do something else.
+#### How to Configure
+
+When setting up an If Node, you’ll define:
+
+- **Condition Path**: The JSON path to the variable you want to check (e.g., `${workflow.input.user.age}`).
+- **Variable Type**: Choose whether it’s a string, number, boolean, etc.
+- **Operation**: Select how to compare it—e.g., `equals`, `greater than`, `less than`.
+- **Value**: The value you’re comparing against.
+
+You can combine multiple conditions using `and`/`or` operators.
+
+If the condition is true, the **true path** runs. Otherwise, it follows the **false path**.
+
+![If-control](../Images/Workflow/ifNodeConfiguration.png)
+
+> **💡 Tip:** Keep conditions specific and clearly defined to make your workflow logic easy to maintain.
 
 ---
+
 ## Add Wait Node
 
-### Description
-The wait node allows for pausing the workflow execution for a specific duration proceeding further.
+With wait node, a user can pause the workflow execution for a specific duration.
+
 
 ### Configuration Setup
 
@@ -74,11 +80,36 @@ Suppose you want to pause the execution **until a specific date and time**. You 
 >**_Note:_** Ensure the duration setup aligns with your workflow requirements, allowing for appropriate pauses in the workflow execution.
 
 ---
+
+## Add Chat Node
+
+>**_Note:_** Chat Node configuration is only available in Advance Workflow.
+
+
+The Chat Node allows the user to start direct conversations with users on Slack or Microsoft Teams. Once a message is sent, Siren tracks the recipient's responses for a specified time window. After this window ends, any replies are no longer linked to the original conversation, and tracking stops.
+
+![Chat Node Configuration](../Images/Workflow/Chat-node.png)
+
+### Configuration Setup
+
+- **Select a Channel:** From the **Channel** dropdown, choose the messaging platform:
+    - **Slack**
+    - **Microsoft Teams**
+
+- **Provider Integration:**
+    - By default, a provider can be selected from the dropdown list.
+    - To set the provider **dynamically**, enable the **Dynamic toggle** and provide the value using a variable or JSON path.
+
+- **Enter Recepient ID:** Enter the recipient's **Slack ID**, **email address**, or use a **JSON path** to fetch the details dynamically.
+
+- **Set Chat Duration Window:** Define how long the system should track the recipient's replies to the message.
+    >**_Note:_** Slack and Teams allows up to **6 days** and **3 Days**  of tracking respectively.
+
+---
 ## Add HTTP Node
 
 >**_Note:_** HTTP Node configuration is only available in Advance Workflow.
 
-### Description
 The HTTP node configuration panel provides a comprehensive interface for setting up HTTP requests, facilitating seamless integration with external APIs or services.
 
 ![http](../Images/Workflow/httpNodeConfiguration.png)

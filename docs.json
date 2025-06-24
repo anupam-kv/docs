@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Siren",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -16,9 +16,7 @@
           {
             "group": "Getting Started",
             "pages": [
-              "docs/01 - Getting Started/Overview",
-              "docs/01 - Getting Started/Quick-start-Guide",
-              "docs/01 - Getting Started/Send Message API, Get reply, get status"
+              "docs/01 - Getting Started/Overview"
             ]
           },
           {
@@ -92,22 +90,27 @@
             "group": "Monitoring",
             "pages": [
               "docs/Monitoring/Workspace Overview",
-              "docs/Monitoring/02 - Dashboard/01 - Overview",
-              "docs/Monitoring/02 - Dashboard/02 - Dashboard UI"
+              {
+                "group": "Dashboard",
+                "pages": [
+                  "docs/Monitoring/02 - Dashboard/Dashboard Overview",
+                  "docs/Monitoring/02 - Dashboard/Dashboard UI"
+                ]
+              }
             ]
           },
           {
             "group": "Notifications",
             "pages": [
-              "docs/06 - Notification Logs/01 - Notification Lifecycle",
-              "docs/06 - Notification Logs/02 - Log Export"
+              "docs/06 - Notification Logs/Notification Lifecycle",
+              "docs/06 - Notification Logs/Log Export"
             ]
           },
           {
             "group": "User Management",
             "pages": [
-              "docs/09 - Managing user accounts/01 - Settings and configuration",
-              "docs/09 - Managing user accounts/02 - Access details"
+              "docs/09 - Managing user accounts/Settings and configuration",
+              "docs/09 - Managing user accounts/Access details"
             ]
           },
           {
