@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 ## Tag Workflow
@@ -48,8 +48,7 @@ Organize and streamline your workflow management using tags — a powerful way t
 ---
 ## Clone Workflow
 
-Effortlessly replicate your workflows across various environments in Siren, saving time and resources with the workflow cloning feature.
-
+With **Clone Workflow**, user can replicate workflows across environments.
 ![Clone Workflow](../Images/Workflow/WorkflowsClone.png)
 
 ### How It Works
@@ -75,11 +74,76 @@ Effortlessly replicate your workflows across various environments in Siren, savi
 ---
 ## Duplicate Workflow
 
+With **Duplicate Workflow**, user can copy an existing workflow within the same environment.
+![Duplicate Workflow](../Images/Workflow/duplicateWorkflow.png)
+
+### How It Works
+
+1. **Access Workflows**  
+   Navigate to the Workflows section within Siren.
+
+2. **Select Workflow**  
+   Choose the workflow you wish to duplicate from the list and access the More Options menu (⋮).
+
+3. **Initiate Duplication**  
+   Click on "Duplicate" from the menu. This action prompts the Duplicate Workflow dialog to appear.
+
+4. **Review and Customize**  
+   Optionally, review details such as name, description, etc., for the duplicated workflow. Customize as needed before confirming the duplication action.
+
+5. **Confirm Duplication**  
+   Proceed by confirming the duplication action.
+
+6. **Utilize Duplicated Workflow**  
+   Access the duplicated workflow for further customization or immediate use as needed.
+
+>**_Note:_** Simplify your setup and streamline your workflow within Siren by effortlessly duplicating workflows within the same environment.
+
 ---
-## Schedule Workflow
+## Schedule Workflows
 
+Automate the execution of workflows in Siren by scheduling them to run at specific dates and times. This enables efficient task management and ensures timely execution without manual intervention.
 
-### Schedule Actions
+![Schedule Workflow](../Images/Workflow/createSchedule.png)
 
+### Creating a Schedule
 
-### View Schedule list
+Click on the **Add Schedule** button to create a new schedule:
+
+1. Enter a **Schedule Name** when prompted.
+2. After saving, you’ll be redirected to the **Schedule Detail Page**.
+
+### Schedule Detail Page
+
+The **Schedule Detail Page** displays all configuration options and metadata for a specific schedule:
+
+- **Schedule Name**: The name assigned to the schedule.
+- **Workflow Name**: The workflow that will be triggered by this schedule.
+- **Start Date and Time Zone**: The date/time from which the schedule becomes active and its time zone context.
+- **Scheduling Frequency**:  
+  Choose how often the workflow should run:  
+  - `Once`  
+  - `Daily`  
+  - `Weekly`  
+  - `Monthly`  
+  - `Custom`
+- **Schedule Time**: The exact time of day when the workflow should run.
+- **End Options**:  
+  - `Never`: The schedule continues indefinitely.  
+  - `After a specific date`: Define an explicit end date.
+- **JSON Body (Optional)**: Input a JSON payload to be passed when the workflow is triggered.
+- **Pause and Resume**: Temporarily disable or resume the schedule as needed.
+
+### Schedule Frequencies
+
+#### ONCE
+
+- These schedules execute **only once**, based on the specified configuration.
+- Required fields for ONCE schedules:
+  - **Workflow Name**
+  - **Start Date and Time Zone**
+  - **Schedule Time**
+![Schedule Detail Page](../Images/Workflow/dailySchedule.png)
+
+> **_Note:_** Use ONCE schedules for one-off executions, such as triggering a welcome email or an alert at a specific moment in time.
+---

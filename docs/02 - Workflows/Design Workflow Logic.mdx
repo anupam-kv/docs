@@ -1,8 +1,13 @@
 ---
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 ## Working with Nodes
+
+In Siren, **nodes** are the building blocks of a workflow. Each node performs a specific task—such as decision-making, sending messages, waiting, or making API calls—and helps define the logic and flow of the automation. Nodes allow you to control how a workflow behaves based on dynamic inputs, conditions, and external data. 
+> Properly configuring each node ensures your workflow behaves predictably and handles all necessary conditions seamlessly.
+
+Following sections explain about different nodes that Siren offer and how to configure them. Once your nodes are configured, you can proceed to <a href="#add-template---provider">adding templates</a> to personalize and deliver your messages.
 
 
 ---
@@ -14,7 +19,7 @@ Use the **Switch Node** when you want to handle multiple possible values for a g
 #### Input Parameter
 
 Set the input parameter using a variable path. Prefix it with `${workflow.input}` to reference a value from the incoming request JSON or a previous HTTP node response.  
-_Example: `${workflow.input.user.status}`_
+_Example: `${workflow.input.data.status}`_
 
 #### Handling Cases
 
@@ -29,7 +34,7 @@ _Example: `${workflow.input.user.status}`_
 
 ### If Node
 
-Use the If Node when you need to make a decision in your workflow — basically, “if this is true, do that; if not, do something else.
+Use the **If Node** when you need to make a decision in your workflow — basically, “if this is true, do that; if not, do something else.
 #### How to Configure
 
 When setting up an If Node, you’ll define:
@@ -219,4 +224,3 @@ Shown below is an example of an email verification template featuring variables 
 
   
 ---
-## Apply Conditions

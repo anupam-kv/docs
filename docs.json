@@ -16,7 +16,9 @@
           {
             "group": "Getting Started",
             "pages": [
-              "docs/01 - Getting Started/Overview"
+              "docs/01 - Getting Started/Overview",
+              "docs/01 - Getting Started/Quick-start-Guide",
+              "docs/01 - Getting Started/Send Message API, Get reply, get status"
             ]
           },
           {
@@ -81,9 +83,8 @@
             "group": "Campaigns",
             "pages": [
               "docs/05 - Campaigns/Overview",
-              "docs/05 - Campaigns/Running Campaign",
               "docs/05 - Campaigns/Cohort & users",
-              "docs/05 - Campaigns/How to view campaign analytics"
+              "docs/05 - Campaigns/Creating Cohort"
             ]
           },
           {
