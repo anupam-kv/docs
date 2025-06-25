@@ -18,7 +18,8 @@
             "pages": [
               "docs/01 - Getting Started/Overview",
               "docs/01 - Getting Started/Quick-start-Guide",
-              "docs/01 - Getting Started/Send Message API, Get reply, get status"
+              "docs/01 - Getting Started/Send Message API, Get reply, get status",
+              "docs/01 - Getting Started/Migrate to Siren"
             ]
           },
           {
@@ -68,7 +69,7 @@
                   "docs/04 - Channels & Providers/02 - Channel Integration/In-App Channel",
                   "docs/04 - Channels & Providers/02 - Channel Integration/Push Notification Channel",
                   "docs/04 - Channels & Providers/02 - Channel Integration/SMS Channel",
-                  "docs/04 - Channels & Providers/02 - Channel Integration/Whatsapp Channel.mdx"
+                  "docs/04 - Channels & Providers/02 - Channel Integration/Whatsapp Channel"
                 ]
               }
             ]
@@ -82,7 +83,7 @@
           {
             "group": "Campaigns",
             "pages": [
-              "docs/05 - Campaigns/Overview",
+              "docs/05 - Campaigns/Campaign Overview",
               "docs/05 - Campaigns/Cohort & users",
               "docs/05 - Campaigns/Creating Cohort"
             ]

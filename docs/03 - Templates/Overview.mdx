@@ -1,8 +1,11 @@
 ---
 sidebar_position: 1
 ---
-# Templates Overview
 
-Templates serve as a centralized hub for all your message content in Siren. Whether it's for SMS, email, chat, push notifications, or other channels, all content is organized within a single template group for streamlined management. Your template can consist of two types of content:
-- **Static Content**: This remains consistent for all users and contains your core message or design.
-- **Dynamic Content**: These are placeholders for user or tenant-specific information, such as first names, booking amounts, appointment times, and more. These variables are dynamically populated based on the data provided in your workflow or event request.
+Templates in Siren centralize all your message content—across SMS, email, chat, push notifications, and other supported channels—into a single, reusable structure. This helps ensure consistency in messaging while reducing duplication and manual effort across workflows.
+
+Each template can include two types of content:
+
+- **Static Content**: These are fixed parts of the message that remain the same for every recipient.
+
+- **Dynamic Content**: These are variable placeholders (e.g., `{{firstName}}`, `{{bookingAmount}}`, `{{appointmentTime}}`) that personalize the message based on user-specific or event-driven data. These values are automatically populated using inputs from the workflow or event request, enabling tailored communication at scale.
