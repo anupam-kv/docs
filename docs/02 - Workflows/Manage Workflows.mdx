@@ -4,7 +4,7 @@ sidebar_position: 6
 
 ## Tag Workflow
 
-Organize and streamline your workflow management using tags — a powerful way to categorize workflows and automatically surface relevant templates.
+Tags help you categorize workflows for better organization and discovery. By assigning relevant tags during creation, you can easily filter workflows and surface matching templates when building new ones.
 
 ![Tag Workflow](../Images/Workflow/WorkflowsTag.png)
 
@@ -48,7 +48,7 @@ Organize and streamline your workflow management using tags — a powerful way t
 ---
 ## Clone Workflow
 
-With **Clone Workflow**, user can replicate workflows across environments.
+With **Clone Workflow**, you can replicate workflows across environments.
 ![Clone Workflow](../Images/Workflow/WorkflowsClone.png)
 
 ### How It Works
@@ -74,7 +74,7 @@ With **Clone Workflow**, user can replicate workflows across environments.
 ---
 ## Duplicate Workflow
 
-With **Duplicate Workflow**, user can copy an existing workflow within the same environment.
+With **Duplicate Workflow**, you can copy an existing workflow within the same environment.
 ![Duplicate Workflow](../Images/Workflow/duplicateWorkflow.png)
 
 ### How It Works
@@ -108,25 +108,25 @@ Automate the execution of workflows in Siren by scheduling them to run at specif
 
 ### Creating a Schedule
 
-Click on the **Add Schedule** button to create a new schedule:
-
-1. Enter a **Schedule Name** when prompted.
-2. After saving, you’ll be redirected to the **Schedule Detail Page**.
+- Click on **Schedules** under **Workflows** in the left navigation pane. you will be navigated to [Schedule Listing]() page.
+- Click on the **Add Schedule** button to create a new schedule:
+    - Enter a **Schedule Name** when prompted.
+    - After saving, you’ll be redirected to the **Schedule Detail Page**.
 
 ### Schedule Detail Page
 
 The **Schedule Detail Page** displays all configuration options and metadata for a specific schedule:
 
 - **Schedule Name**: The name assigned to the schedule.
-- **Workflow Name**: The workflow that will be triggered by this schedule.
-- **Start Date and Time Zone**: The date/time from which the schedule becomes active and its time zone context.
+- **Workflow Name**: The workflow to be scheduled should be selected.
+- **Start Date and Time Zone**: Set the date/time from which the schedule becomes active and its time zone context.
 - **Scheduling Frequency**:  
   Choose how often the workflow should run:  
   - `Once`  
   - `Daily`  
   - `Weekly`  
   - `Monthly`  
-  - `Custom`
+
 - **Schedule Time**: The exact time of day when the workflow should run.
 - **End Options**:  
   - `Never`: The schedule continues indefinitely.  
@@ -136,14 +136,46 @@ The **Schedule Detail Page** displays all configuration options and metadata for
 
 ### Schedule Frequencies
 
-#### ONCE
+#### Once
 
 - These schedules execute **only once**, based on the specified configuration.
-- Required fields for ONCE schedules:
-  - **Workflow Name**
-  - **Start Date and Time Zone**
-  - **Schedule Time**
+   - Select **Once** from **Runs** dropdown and you can set when the Schedule should run.
+
+![Schedule Detail Page](../Images/Workflow/onceSchedule.png)
+
+> **_Note:_** Use Once schedules for one-off executions, such as triggering a welcome email or an alert at a specific moment in time.
+
+#### Daily
+
+- These schedules run **daily**, starting from the specified start date and time.
+- Select **Daily** from **Runs** dropdown and you can select the time of the day and the end date.
+
+
+> **_Note:_** Use Daily schedules for recurring workflows like daily reports or routine status updates.
+
 ![Schedule Detail Page](../Images/Workflow/dailySchedule.png)
 
-> **_Note:_** Use ONCE schedules for one-off executions, such as triggering a welcome email or an alert at a specific moment in time.
----
+#### Weekly
+
+- These schedules run **weekly**, starting from the specified start date and time.
+- Select **Weekly** from **Runs** dropdown, where you can:
+   - Select the days of the week
+   - Select the time of the day
+   - Select when the schedule should end.
+
+![Schedule Detail Page](../Images/Workflow/weeklySchedule.png)
+
+#### Monthly
+
+- These schedules run **monthly**, starting from the specified start date and time.
+- Select **Monthly** from **Runs** dropdown, where you can:
+   - Select the day of the month
+   - Select the time of the day
+   - Select when the schedule should end.
+
+![Schedule Detail Page](../Images/Workflow/monthlySchedule.png)
+
+
+
+
+
