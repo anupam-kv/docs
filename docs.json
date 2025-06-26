@@ -3,11 +3,18 @@
   "theme": "mint",
   "name": "Siren",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#F55E31",
+    "light": "#F55E31",
+    "dark": "#F55E31"
   },
   "favicon": "/favicon.svg",
+  "contextual": {
+    "options": [
+      "copy",
+      "chatgpt",
+      "claude"
+    ]
+  },
   "navigation": {
     "tabs": [
       {
@@ -18,7 +25,8 @@
             "pages": [
               "docs/01 - Getting Started/Overview",
               "docs/01 - Getting Started/Quick-start-Guide",
-              "docs/01 - Getting Started/Send Message API, Get reply, get status"
+              "docs/01 - Getting Started/Send Message API, Get reply, get status",
+              "docs/01 - Getting Started/Migrate to Siren"
             ]
           },
           {
@@ -68,7 +76,7 @@
                   "docs/04 - Channels & Providers/02 - Channel Integration/In-App Channel",
                   "docs/04 - Channels & Providers/02 - Channel Integration/Push Notification Channel",
                   "docs/04 - Channels & Providers/02 - Channel Integration/SMS Channel",
-                  "docs/04 - Channels & Providers/02 - Channel Integration/Whatsapp Channel.mdx"
+                  "docs/04 - Channels & Providers/02 - Channel Integration/Whatsapp Channel"
                 ]
               }
             ]
@@ -82,7 +90,7 @@
           {
             "group": "Campaigns",
             "pages": [
-              "docs/05 - Campaigns/Overview",
+              "docs/05 - Campaigns/Campaign Overview",
               "docs/05 - Campaigns/Cohort & users",
               "docs/05 - Campaigns/Creating Cohort"
             ]
@@ -187,13 +195,13 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:admin@trysiren.io"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "href": "https://app.trysiren.io/signup"
     }
   },
   "footer": {
