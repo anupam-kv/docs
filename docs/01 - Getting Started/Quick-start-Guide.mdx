@@ -8,63 +8,27 @@ To ensure a seamless onboarding experience and quickly get you acquainted with t
 
 ---
 
-#### 1. Let's get started with [creating an account]() in **Siren**.
-
-#### 2. Backend Integrations
+## Quick Start Guide
 
 
-Let's begin by setting up your channel and provider integrations:
+1. Let's start by [creating an account]() in Siren.
 
-- Gather your **API credentials** from your current communication providers/platforms.
-- Head to the **Provider** section on the Siren platform, select your provider, and input the credentials to activate your provider/channel.
+2. Add Backend Integrations:
+    - [SDK Integration](): Use our Siren SDKs to integrate Siren with your backend services.
+    - [MCP Integration](): Use the Model Context Protocol (MCP) server to dynamically fetch documentation-based templates and context.
+    - [AI Agent Toolkit Integration]():
 
----
+3. Add APIs
+Use Siren's API to trigger workflows, send notifications, fetch status, and more. Refer to the [API Reference](../API%20Reference/api-reference.md) for full details and example requests.
 
-### 3. Customize Your Templates
+4. Channel and Provider Integration
+Set up your communication channels (SMS, Email, Push, Chat) and configure the corresponding providers. Go to the [Channel and Provider Integration](../Configuration/channels-and-providers.md) section for setup guidance.
 
-Templates are the heart of your messaging content:
+## Send Messages via API
 
-- Utilize our user-friendly template editor to craft and modify templates seamlessly.
-- Whether static or dynamic with placeholders for replaceable data points, Siren templates make messaging efficient.
-
-> **Note:**  
-> We use `{{ }}` or `{{{ }}}` as placeholders.
-> 
-> - Use `{{expression}}` for HTML-escaped output.  
-> - Use `{{{expression}}}` for raw, unescaped output.  
-> 
-> **Example:**  
-> `Your Secure Delivery Code is {{code}} and it's valid for the next 30 minutes. Enter this Delivery Code on the device to receive the package.`
+After all the integrations and set up are done, you can use Siren's [Send Message API]() to send messages, initiate notifications, and track delivery using **Get Status** and **Get Reply** APIs. These endpoints help you monitor and manage communication easily.
 
 ---
-
-### 4. Configure Your Communication
-
-Initiate communication through Siren by setting up your API Key:
-
-- Generate an API key in the API Keys section.
-- Copy and securely store your API keys as they're irretrievable once the pop-up is closed.
-- API keys function for both Live and Test versions, and you can create multiple keys labelled for easy identification.
-- Craft your first Notification Workflow by selecting the template, channels, and providers.  
-- Save the event and obtain the unified code for all channels and providers.
-- Test your communication by triggering the test notification. Upon success, publish the workflow to make it Live.
-
----
-
-### 5. Monitor Your Performance with Analytics
-
-Effortlessly track your communication performance through Dashboard and Logs:
-
-#### Dashboard:
-- Gain valuable insights into channel and provider usage.
-- Compare channel performance and assess provider effectiveness.
-- Access detailed analytics like delivery and open rates for each notification event.
-
-#### **Logs:**
-- Review comprehensive logs providing a trace route of your messages for swift troubleshooting.
-- Monitor the status of every message, from delivery attempts to eventual read/open status.
-
-
 
 ##  **That's a Wrap!**
 
