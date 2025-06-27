@@ -7,71 +7,59 @@ We are thrilled to have you onboard and confident that **Siren** will transform 
 To ensure a seamless onboarding experience and quickly get you acquainted with the Siren platform, we’ve crafted this Introduction to guide you through the process and kickstart your journey.
 
 ---
+## Quick Start Guide
 
-#### 1. Let's get started with [creating an account]() in **Siren**.
-
-#### 2. Backend Integrations
-
-
-Let's begin by setting up your channel and provider integrations:
-
-- Gather your **API credentials** from your current communication providers/platforms.
-- Head to the **Provider** section on the Siren platform, select your provider, and input the credentials to activate your provider/channel.
+Set up your Siren account and start sending messages in just a few steps.
 
 ---
 
-### 3. Customize Your Templates
+### Step 1: [Sign Up to Siren](https://app.trysiren.io/sign-up)
 
-Templates are the heart of your messaging content:
-
-- Utilize our user-friendly template editor to craft and modify templates seamlessly.
-- Whether static or dynamic with placeholders for replaceable data points, Siren templates make messaging efficient.
-
-> **Note:**  
-> We use `{{ }}` or `{{{ }}}` as placeholders.
-> 
-> - Use `{{expression}}` for HTML-escaped output.  
-> - Use `{{{expression}}}` for raw, unescaped output.  
-> 
-> **Example:**  
-> `Your Secure Delivery Code is {{code}} and it's valid for the next 30 minutes. Enter this Delivery Code on the device to receive the package.`
+Create your Siren account to access the dashboard, manage workflows, and configure communication channels.
 
 ---
 
-### 4. Configure Your Communication
+### Step 2: Integrate the SDK and MCP Server
 
-Initiate communication through Siren by setting up your API Key:
+#### SDK Integration  
+Use the Siren SDK to trigger workflows and manage communication directly from your backend.  
+[Read the SDK Documentation](https://docs.trysiren.io/docs/SDK)
 
-- Generate an API key in the API Keys section.
-- Copy and securely store your API keys as they're irretrievable once the pop-up is closed.
-- API keys function for both Live and Test versions, and you can create multiple keys labelled for easy identification.
-- Craft your first Notification Workflow by selecting the template, channels, and providers.  
-- Save the event and obtain the unified code for all channels and providers.
-- Test your communication by triggering the test notification. Upon success, publish the workflow to make it Live.
+#### MCP Server Setup  
+Integrate the MCP (Model Context Protocol) server to allow AI agents to automatically handle workflow triggers and integrations.  
+[Learn about MCP Integration](https://docs.trysiren.io/docs/MCP%20Server)
+
+#### AI Agent Toolkit Integration
 
 ---
 
-### 5. Monitor Your Performance with Analytics
+### Step 3: Generate API Key and Token
 
-Effortlessly track your communication performance through Dashboard and Logs:
+After logging in:
 
-#### Dashboard:
-- Gain valuable insights into channel and provider usage.
-- Compare channel performance and assess provider effectiveness.
-- Access detailed analytics like delivery and open rates for each notification event.
+1. Go to the **right panel** → **Settings** → **Configurations**.
+2. Click on **"Add API Key"**.
+3. Enter a name for your API key.
+4. An **API Token** will be generated.
 
-#### **Logs:**
-- Review comprehensive logs providing a trace route of your messages for swift troubleshooting.
-- Monitor the status of every message, from delivery attempts to eventual read/open status.
+>**_Note_**: Save this token securely — it is required for authenticating all API requests.  
 
+[API Reference](https://docs.trysiren.io/docs/API%20Reference)
 
+---
 
-##  **That's a Wrap!**
+### Step 4: Set Up Providers
 
-This concludes Siren's Quick Start Guide. We're confident that you've set up Siren smoothly and are ready to elevate your communication strategy with us!
+1. In the **left panel**, go to **Settings** → **Providers**.
+2. You'll see available **channels** (SMS, Email, Push, etc.).
+3. Under each channel, select a **provider** and click **"Add Account"**.
+4. Enter the required credentials or API details.
 
-Stay tuned for regular updates from Siren — including tips, industry standards, and more to enhance your notification game!
+>**_Note_**: You can add up to **5 accounts** across all providers.  
 
+[View Provider Setup Guide](https://docs.trysiren.io/docs/Providers)
 
+---
 
-Happy Communicating with Siren!
+You're now ready to create workflows and start communicating with your users!  
+Need help? Explore our [full documentation](https://docs.trysiren.io/).
