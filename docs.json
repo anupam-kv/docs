@@ -131,6 +131,17 @@
           }
         ]
       },
+       {
+        "tab": "AI Agent Toolkit",
+        "groups": [
+          {
+            "group": "AI Agent Toolkit",
+            "pages": [
+              "docs/AI Agent toolkit"
+            ]
+          }
+        ]
+      },
       {
         "tab": "MCP",
         "groups": [
@@ -138,17 +149,6 @@
             "group": "MCP",
             "pages": [
               "docs/MCP"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "AI Agent Toolkit",
-        "groups": [
-          {
-            "group": "AI Agent Toolkit",
-            "pages": [
-              "docs/AI Agent toolkit"
             ]
           }
         ]
