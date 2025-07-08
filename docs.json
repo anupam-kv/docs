@@ -201,7 +201,7 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
+      "label": "Get an API Key",
       "href": "https://app.trysiren.io/signup"
     }
   },
