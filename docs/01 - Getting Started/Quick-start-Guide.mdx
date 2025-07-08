@@ -8,22 +8,19 @@ description: "Let us get you up and running in a few simple steps:"
 
 You can sign up using Gmail or GitHub.
 
----
-
-### Step 2: Generate API Key and Token
+### Step 2: Generate API Key
 
 After logging in:
 
 1. Go to the **right panel** → **Settings** → **Configurations**.
-2. Click on **"Add API Key"**.
-3. Enter a name for your API key.
+2. Click on **"Add API Key"** in the top right corner.
+3. Enter a name for your API key in the modal.
 4. An **API Token** will be generated.
 
 <Warning>
-  Save this token securely — it is required for authenticating all API requests. See [API Reference](https://docs.trysiren.io/docs/API%20Reference)
+  Copy and save this token securely — it is required for authenticating all API requests. See [API Reference](https://docs.trysiren.io/docs/API%20Reference)
 </Warning>
 
----
 ### Step 3: Set Up Providers
 
 <Info>
@@ -40,22 +37,19 @@ After logging in:
   **_Note_**: You can add up to **5 accounts** across all providers.
 </Note>
 
----
 ### Step 4: Send Your First Message
 
 There are multiple ways to integrate Siren and start sending messages:
 
-- **MCP Server Integration**\
-  Connect your MCP (Model Context Protocol) server to let AI agents learn from your internal documentation and handle automation intelligently.\
+- **MCP Server Integration:** With the Siren MCP server, you can connect to Siren APIs through function calls, making it easy for your tools to work with messages, templates, users, workflows, and webhooks. \
   [Learn more](https://docs.trysiren.io/docs/MCP%20Server)
-- **SDK Integration**\
-  Use the Siren SDK to trigger workflows, send messages, and manage notifications directly from your backend.\
-  [Go to SDK Docs](https://docs.trysiren.io/docs/SDK)
 - **AI Agent Toolkit**\
-  Integrate your AI agent to automatically configure workflows, manage templates, and handle notification logic based on your internal context.\
-  [See AI Toolkit Setup](/docs/MCP)
+  Integrate your AI agent to automatically configure workflows, manage templates, and handle notification logic based on your internal context. [See AI Toolkit Setup](/docs/MCP)
+- **SDK Integration**\
+  Use the Siren SDK to trigger workflows, send messages, and manage notifications directly from your backend. In our siren python library, there are functions that you can call to send message\
+  [Go to SDK Docs](https://docs.trysiren.io/docs/SDK)
 - **Send via API**\
-  Siren provides simple and flexible APIs to send messages with or without a predefined workflow. You can send one-off messages, trigger workflows, or schedule campaigns using lightweight payloads.\
+  Siren provides simple and flexible APIs to send messages. You can send one-off messages, trigger workflows, or schedule campaigns using lightweight payloads. Refer to QuickSend to see how you can send message and track responses using API\
   [Explore API Reference](https://docs.trysiren.io/docs/API%20Reference)
 
 ---
