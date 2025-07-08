@@ -143,10 +143,10 @@
         ]
       },
       {
-        "tab": "MCP",
+        "tab": "MCP Server",
         "groups": [
           {
-            "group": "MCP",
+            "group": "MCP Server",
             "pages": [
               "docs/MCP"
             ]
