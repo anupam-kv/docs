@@ -2,3 +2,7 @@
 title: "Siren Model Context Protocol (MCP) Server"
 description: "Use the Siren MCP server to make Siren accessible to LLMs and AI agents via tool calling."
 ---
+
+### What is the Siren MCP server?
+
+The Siren Model Context Protocol (MCP) server lets any LLM-enabled IDE, agent-framework or CLI talk to the Siren platform **through standardised function calls**. You choose which Siren tools—messaging, template management, workflows, user operations, web-hooks—are exposed; the server multiplexes them over a single `stdio` connection that every MCP client understands. One binary, one API-key, zero additional infrastructure.
