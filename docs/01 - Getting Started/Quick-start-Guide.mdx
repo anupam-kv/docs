@@ -79,7 +79,7 @@ Here's a simplified example:
 ```
 
 <Note>
-  If you're not using the default provider configured in the Siren account, you can specify which provider to use by adding the `providerIntegration` field in the request. Refer to [API Reference](/docs/API References) for the details.
+  If you're not using the default provider configured in the Siren account, you can specify which provider to use by adding the `providerIntegration` field in the request. Refer to [API Reference](/docs/API-References) for the details.
 </Note>
 
 Once a message is sent, you can use the following endpoints to track it:
@@ -87,4 +87,4 @@ Once a message is sent, you can use the following endpoints to track it:
 - `GET /message-status/{id}` - Check whether the message was delivered, failed, or is still pending.
 - `GET /get-reply/{notificationId}` - Fetch replies to a message (currently supported for Slack only). This includes main messages and threaded responses from users.
 
-These endpoints help you build a full feedback loop between your system, the provider, and the user. Refer [API References](/docs/API References) for the complete details.
+These endpoints help you build a full feedback loop between your system, the provider, and the user. Refer [API References](/docs/API-References) for the complete details.
