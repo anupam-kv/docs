@@ -16,9 +16,9 @@ You can sign up using Gmail or GitHub.
 
 - **SDK Integration:** Use the Siren SDK to trigger workflows and manage communication directly from your backend.\
   [Go to SDK Documentation](https://docs.trysiren.io/docs/SDK)
-- **MCP Server Setup: **Integrate the MCP (Model Context Protocol) server to allow AI agents to learn from our documentation.\
+- \*\*MCP Server Setup: \*\*Integrate the MCP (Model Context Protocol) server to allow AI agents to learn from our documentation.\
   [Go to MCP Integration](https://docs.trysiren.io/docs/MCP%20Server)
-- **AI Agent Toolkit Integration: **Now, let's integrate your own AI Agent. [see how](/docs/MCP)
+- \*\*AI Agent Toolkit Integration: \*\*Now, let's integrate your own AI Agent. [see how](/docs/MCP)
 
 ### Step 3: Generate API Key and Token
 
@@ -29,19 +29,64 @@ After logging in:
 3. Enter a name for your API key.
 4. An **API Token** will be generated.
 
-> **_Note_**: Save this token securely — it is required for authenticating all API requests. See [API Reference](https://docs.trysiren.io/docs/API%20Reference)
+<Warning>
+  Save this token securely — it is required for authenticating all API requests. See [API Reference](https://docs.trysiren.io/docs/API%20Reference)
+</Warning>
 
 ### Step 4: Set Up Providers
 
-> **_Note_**: By default, there will be a provider '**Sample Email Provider**' setup under the Email channel.
+<Info>
+  By default, there will be a provider '**Sample Email Provider**' setup under the Email channel.
+</Info>
 
 1. In the **left panel**, go to **Settings** → **Providers**.
 2. You'll see available **channels** (SMS, Email, Push, etc.)
 3. Under each channel, select a **provider** and click **"Add Account"**.
 4. Enter the required credentials or API details. [View the Provider Setup Guide](https://docs.trysiren.io/docs/Providers) for more details
 
-> **_Note_**: You can add up to **5 accounts** across all providers.
+<Note>
+  **_Note_**: You can add up to **5 accounts** across all providers.
+</Note>
 
 ---
 
-You're now ready to create workflows and start communicating with your users\! before that, let us see how to send a message using just APIs.
+You're now ready to create workflows and start communicating with your users\! but Siren gives you an option to send notifications using APIs without creating a workflow. The next section gives you a birds eye view of how to send message using API.
+
+## Send Message using API
+
+You can use Siren's `POST /send-messages` API to send a notification without setting up a workflow. This lets you directly send messages to user over your desired channel with or without using a predefined template.
+
+To send a message, you just need to include the channel, recipient details (matching that channel), and optionally a template name with variables — as shown below. The request must be authorized using your API key, which should be included in the header as:
+
+`Authorization: Bearer <YOUR_API_KEY>`
+
+Once sent, Siren will return a `notificationId`, which you can use to check the message status or fetch replies
+
+Here's a simplified example:
+
+```json
+{
+  "channel": "EMAIL",
+  "recipient": {
+    "email": "user@example.com"
+  },
+  "template": {
+    "name": "welcome_template"
+  },
+  "templateVariables": {
+    "firstName": "John",
+    "offerCode": "ABCD123"
+  }
+}
+```
+
+<Note>
+  If you're not using the default provider configured in the Siren account, you can specify which provider to use by adding the `providerIntegration` field in the request. Refer to [API Reference](/docs/API References) for the details.
+</Note>
+
+Once a message is sent, you can use the following endpoints to track it:
+
+- `GET /message-status/{id}` - Check whether the message was delivered, failed, or is still pending.
+- `GET /get-reply/{notificationId}` - Fetch replies to a message (currently supported for Slack only). This includes main messages and threaded responses from users.
+
+These endpoints help you build a full feedback loop between your system, the provider, and the user. Refer [API References](/docs/API References) for the complete details.
