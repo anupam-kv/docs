@@ -1,0 +1,43 @@
+---
+title: "QuickSend"
+description: "Description of your new file."
+---
+
+## QuickSend
+
+Need to send a critical update or one-off announcement? You can use Siren's `POST /send-messages` API to send a notification without setting up a workflow. This lets you directly send messages to a user over your desired channel with or without using a predefined template.
+
+To send a message, you just need to include the channel, recipient details (matching that channel), and optionally a template name with variables, as shown below. The request must be authorized using your API key, which should be included in the header as:
+
+`Authorization: Bearer <YOUR_API_KEY>`
+
+Once sent, Siren will return a `notificationId`, which you can use to check the message status or fetch replies
+
+Here's a simplified example:
+
+```json
+{
+  "channel": "EMAIL",
+  "recipient": {
+    "email": "user@example.com"
+  },
+  "template": {
+    "name": "welcome_template"
+  },
+  "templateVariables": {
+    "firstName": "John",
+    "offerCode": "ABCD123"
+  }
+}
+```
+
+<Note>
+  If you're not using the default provider configured in the Siren account, you can specify which provider to use by adding the `providerIntegration` field in the request. Refer to [API Reference](/docs/API-References) for the details.
+</Note>
+
+Once a message is sent, you can use the following endpoints to track it:
+
+- `GET /message-status/{id}` - Check whether the message was delivered, failed, or is still pending.
+- `GET /get-reply/{notificationId}` - Fetch replies to a message (currently supported for Slack only). This includes main messages and threaded responses from users.
+
+These endpoints help you build a full feedback loop between your system, the provider, and the user. Refer [API References](/docs/API-References) for the complete details.
