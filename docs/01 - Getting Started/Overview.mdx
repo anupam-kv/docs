@@ -94,3 +94,14 @@ A **workspace** in Siren is a dedicated environment where you manage your templa
 - **Production** – for sending live notifications to real users
 
 Each workspace is isolated from the others, allowing you to build, test, and deploy safely without impacting your production data or users.
+
+### Webhook
+
+Siren uses webhooks to keep your systems in sync with what’s happening behind the scenes. You can add a provider’s webhook URL to receive real-time delivery updates directly from services like Twilio or SendGrid.
+
+Siren also supports two built-in webhooks:
+
+- The **Notifications Webhook** lets you instantly receive events like delivery or failure as they happen.
+- The **Inbound Message Webhook** captures replies or incoming messages from users and passes them to your system.
+
+With these in place, you stay updated on both outbound and inbound messages — without polling or manual checks.
