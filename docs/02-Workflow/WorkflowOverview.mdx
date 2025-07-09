@@ -1,0 +1,69 @@
+---
+title: "Workflows"
+description: "Automate message flows using Siren’s visual workflow builder."
+---
+
+## Workflows
+
+Workflows in Siren let you automate how notifications are triggered, routed, and delivered across channels. You can create flexible message flows that respond to events, include logic-based conditions, and adapt to real-time data — all without writing any code.
+
+Whether you're sending a simple alert or managing a multi-step communication journey, workflows give you full control over how each notification is delivered.
+
+---
+
+## Creating a Workflow
+
+To create a new workflow:
+
+1. Go to the **Workflows** section in the left navigation.
+2. Click **“Add Workflow.”**
+3. Enter a **name**, **description**, and assign a **tag**.
+4. Choose between a **Basic** or **Advanced** workflow.
+5. You’ll be redirected to the **visual workflow editor**, starting with a **Start** node.
+
+Use the **+** buttons to add and connect nodes that define how your notification flow behaves. You can define logic, route messages through different channels, apply conditions, and more.
+
+Each workflow includes:
+
+- **Editor mode** – Drag-and-drop builder to define flow
+- **Test mode** – Toggle to test using simulated input
+- **Input JSON** – Define `data` and `notify` payloads to simulate real events
+- **Publish** – Push the workflow live
+- **Version history** – Track changes and revert if needed
+
+---
+
+## Basic vs Advanced Workflows
+
+Siren supports two workflow types depending on the complexity of your use case:
+
+### 🔹 Basic Workflow
+
+Use this when your logic is straightforward — like sending a message after a trigger or branching based on user properties. Basic workflows include all essential nodes:
+
+- **Wait Node** – Delay execution between steps
+- **If Node** – Create yes/no conditions
+- **Switch Node** – Branch logic based on multiple values
+- **Template/Channel/Provider Nodes** – Select what to send and through which channel
+
+Basic workflows are powerful on their own, especially for rule-based flows that don’t require third-party integrations.
+
+---
+
+### 🔸 Advanced Workflow
+
+Advanced workflows give you everything in Basic, plus integration and AI capabilities:
+
+- **HTTP Node** – Make outbound API calls during the workflow
+- **Chat Node** – Add prompt-based logic or leverage your AI agent to dynamically decide what message to send
+
+Use Advanced workflows when you need to:
+
+- Call external APIs before continuing the flow
+- Generate or customize content using AI
+- Trigger actions based on real-time external data
+
+---
+
+By offering both types, Siren allows you to start simple and scale your messaging logic as your needs grow — all within the same visual editor.
+
