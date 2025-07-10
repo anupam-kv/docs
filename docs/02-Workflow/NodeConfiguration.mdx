@@ -4,7 +4,7 @@ title: "Node Configuration"
 description: "Description of your new file."
 ---
 
-Earlier, we covered how to create a workflow and got familiar with the Workflow Editor. Now, let’s take a closer look at how each **node** works.
+Earlier, we covered how to create a workflow and got familiar with the Workflow Editor. Now, let's take a closer look at how each **node** works.
 
 Inside the editor, you build your workflow by connecting nodes — each representing a specific action, condition, or message step. To add a node, click the `+` icon below an existing one. Then click the node to open its configuration panel.
 
@@ -18,35 +18,29 @@ The sections below cover each node type in detail and explain the options availa
 
 ---
 
-# Wait Node
+## Wait Node
 
 The **Wait Node** lets you pause the workflow before proceeding to the next step. This is useful when you want to introduce a delay or wait until a specific date and time before sending a message or continuing the flow.
 
 When you click on the Wait Node, a configuration panel appears with a **Parameters** tab. Here, you can choose how the wait should be defined:
 
-#### Duration
+### Configuration Options
 
-- Set a fixed delay using:
+- **Duration:** Set a fixed delay using:
   - **Days**
   - **Hours**
   - **Minutes**
   - **Seconds**
 
-This option is ideal for introducing consistent gaps between workflow steps.
+  This option is ideal for introducing consistent gaps between workflow steps.
+- **Until:** Define a specific **date and time** when the workflow should resume.
+  - Select a **Time Zone** to align the timing with the recipient’s or system’s locale.
 
-#### Until
-
-- Define a specific **date and time** when the workflow should resume.
-- Select a **Time Zone** to align the timing with the recipient’s or system’s locale.
-
----
-
-## Additional in Advanced Workflow
+### Advanced Workflow Configuration
 
 In **Advanced workflows**, an extra field appears below the static options:
 
-- **Wait Variable**:
-  - A field to enter a dynamic wait value using a JSON path.
+- **Wait Variable**: A field to enter a dynamic wait value using a JSON path.
   - Example: `{{workflow.data.time}}`
 
 This allows the wait duration to be determined at runtime, based on input data.
@@ -55,18 +49,20 @@ This allows the wait duration to be determined at runtime, based on input data.
 
 ---
 
-# Control Nodes
+## Control Nodes
 
 Control nodes help your workflow make decisions and branch based on conditions or variable values. Siren currently supports two types of control nodes:
 
-- [If Node](#if-node) — used for binary conditions (true/false paths)
-- [Switch Node](#switch-node) — used for multi-branch routing based on values
+- **If Node** — used for binary conditions (true/false paths)
+- **Switch Node** — used for multi-branch routing based on values
 
-## If Node
+---
+
+### If Node
 
 The **If Node** allows you to define one or more conditions, and split the workflow based on whether the condition(s) evaluate to **true** or **false**.
 
-### Basic Workflow
+### Basic Workflow Configuration
 
 In a Basic workflow, you can configure only **one condition**.
 
@@ -81,7 +77,7 @@ Each condition has the following fields:
 
 If the condition evaluates to true, the workflow continues along the **true** path. Otherwise, it follows the **false** path.
 
-### Advanced Workflow
+### Advanced Workflow Configuration
 
 In an Advanced workflow, the If Node becomes more powerful. You can:
 
@@ -119,11 +115,11 @@ In an Advanced workflow, the If Node becomes more powerful. You can:
 
 ---
 
-## Switch Node
+### Switch Node
 
 The **Switch Node** is used to split the workflow into **multiple paths** based on the value of a variable, similar to a `switch-case` logic in programming.
 
-### Basic Workflow
+### Basic Workflow Configuration
 
 In Basic mode, the switch has a **Name** field and allows defining up to **9 cases**, including a **default (fallback)** case.
 
@@ -133,7 +129,7 @@ In Basic mode, the switch has a **Name** field and allows defining up to **9 cas
 - You can route each case to a different set of nodes.
 - The **default** route will be used if no match is found.
 
-### Advanced Workflow
+### Advanced Workflow Configuration
 
 In an Advanced workflow, you'll see a **Switch Expression** field instead of a name.
 
@@ -151,15 +147,15 @@ In an Advanced workflow, you'll see a **Switch Expression** field instead of a n
 > - Add cases like `email`, `sms`, and `push`
 > - Connect each case to the respective channel’s template node
 > - Let the fallback case handle any unknown or missing channel values
-
-This allows you to streamline multi-channel workflows in a clean, organized way.
+>
+> This allows you to streamline multi-channel workflows in a clean, organized way.
 
 ---
 
-# HTTP Node
+## HTTP Node
 
 <Note>
-  This node is only available in Advance Workflow
+    This node is only available in Advanced Workflow
 </Note>
 
 Use the **HTTP Node** to call an external API during your workflow — for example, to fetch user data, verify an action, or enrich notifications with information from another service.
@@ -168,34 +164,17 @@ Use the **HTTP Node** to call an external API during your workflow — for examp
 
 When you add an HTTP Node, you'll see the following fields:
 
-- **Reference Name**\
-  A label used to reference this API’s response in later parts of the workflow (e.g., `user_verification`).
-- **Continue Workflow on API Failure**\
-  If checked, the workflow continues even if the API call fails. Useful for optional or non-blocking requests.
-- **Method**\
-  Choose the type of HTTP request from the following options:
-  - `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `OPTIONS`, `HEAD`
-- **URL**\
-  Enter the **API endpoint link** you want to call.
-- **Body**\
-  Required for methods like `POST`, `PUT`, or `PATCH`. You can insert variables using JSON path.
-- **Content Type**\
-  Specifies the format of the request body:
-  - `application/json`
-  - `text/plain`
-  - `text/html`
-- **Accept Type**\
-  Defines what response format you expect:
-  - `application/json`
-  - `text/plain`
-  - `text/html`
+- **Reference Name**: A label used to reference this API’s response in later parts of the workflow (e.g., `user_verification`).
+- **Continue Workflow on API Failure**: If checked, the workflow continues even if the API call fails. Useful for optional or non-blocking requests.
+- **Method**: Choose the type of HTTP request from the following options: `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `OPTIONS`, `HEAD`.
+- **URL**: Enter the **API endpoint link** you want to call.
+- **Body**: Required for methods like `POST`, `PUT`, or `PATCH`. You can insert variables using JSON path.
+- **Content Type**: Specifies the format of the request body: `application/json`, `text/plain`, `text/html`.
+- **Accept Type**: Defines what response format you expect: `application/json`, `text/plain`, `text/html`.
 - **Timeouts**
   - **Connection Timeout** – Time (in milliseconds) to wait for a connection to establish.
   - **Read Timeout** – Time (in milliseconds) to wait for the response after the connection is open.
-- **Headers**\
-  Add custom headers to the request using key-value pairs.
-
----
+- **Headers**: Add custom headers to the request using key-value pairs.
 
 ### Example
 
@@ -213,15 +192,14 @@ Here’s how you might configure the HTTP Node:
     "userId": "{{data.user_id}}",
     "phone": "{{data.phone_number}}"
   }
-  
   ```
 
 ---
 
-# Chat Node
+## Chat Node
 
 <Note>
-  This node is only available in Advance Workflow
+    This node is only available in Advanced Workflow
 </Note>
 
 Pause the flow to wait for a recipient's response.
@@ -231,15 +209,13 @@ Pause the flow to wait for a recipient's response.
 
 ---
 
-# Template Node
+## Template Node
 
 The **Template Node** is used to send messages using predefined templates across supported channels such as Email, SMS, Push, WhatsApp, and more.
 
-When configuring this node, the available options vary slightly depending on whether the workflow is **Basic** or **Advanced**.
-
 To learn how to create, edit, and manage templates, visit the [Templates](TemplatesOverview) section.
 
-## Basic Workflow
+### Basic Workflow Configuration
 
 In a Basic workflow:
 
@@ -251,7 +227,7 @@ You simply select the desired template, and the message will be sent using that 
 
 ---
 
-## Advanced Workflow
+### Advanced Workflow Configuration
 
 In an Advanced workflow, the Template Node offers more flexibility:
 
@@ -269,13 +245,11 @@ This makes it possible to personalize which template gets triggered — and what
 
 ---
 
-# Channel Node
+## Channel Node
 
 The **Channel Node** lets you send a notification through a specific channel (such as Email, SMS, WhatsApp, etc.) using a configured provider. This is different from the Template Node — here, you manually select the provider and specify recipient details instead of using a predefined template.
 
----
-
-## Basic Workflow
+### Basic Workflow Configuration
 
 In a Basic workflow, the configuration is straightforward:
 
@@ -284,9 +258,7 @@ In a Basic workflow, the configuration is straightforward:
 
 This setup works well when you want to quickly trigger a notification using a static provider and recipient details.
 
----
-
-## Advanced Workflow
+### Advanced Workflow Configuration
 
 In an Advanced workflow, this node offers more flexibility:
 
