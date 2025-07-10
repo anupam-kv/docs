@@ -74,13 +74,14 @@ In a Basic workflow, you can configure only **one condition**.
 
 ![If Node - Basic](/assets/images/editor/if-basic.png)
 
-- Define a single expression with:
-  - **Value A** (input)
-  - **Type** (String, Number, Boolean, etc.)
-  - **Comparison Operator** (Equals, Not Equals, etc.)
-  - **Value B **
+Each condition has the following fields:
 
-If the condition is met, the workflow continues along the **true** path. Otherwise, it proceeds along the **false** path.
+- **Value A** – This is the **input source**, typically a JSON path pointing to data pulled from your system, database, or even a prior node.
+- **Type** – The expected data type for comparison, such as `STRING`, `NUMBER`, or `BOOLEAN`.
+- **Comparison Operator** – How you want to compare the two values. Options include `EQUALS`, `NOT EQUALS`, `GREATER THAN`, etc.
+- **Value B** – The **reference value** you're comparing against. This is usually the value entered by the user or a static condition.
+
+If the condition evaluates to true, the workflow continues along the **true** path. Otherwise, it follows the **false** path.
 
 ### Advanced Workflow
 
@@ -90,30 +91,33 @@ In an Advanced workflow, the If Node becomes more powerful. You can:
 
 - Add multiple conditions
 - Combine them using **AND** / **OR** logic
-- Use JSON path expressions for dynamic values
+- Use dynamic data from external APIs or workflow input using JSON paths
 
-> #### Example
->
-> Let’s say you're setting up a workflow to validate a payment and want to send an alert:
->
-> A user initiates a transaction, and you want to proceed only if **both the OTP and CVV checks pass**.
->
-> In an **Advanced Workflow**, you can configure the **If Node** like this:
->
-> - **Condition 1**:
->   - **Value A**: `user_otp_status`
->   - **Type**: `STRING`
->   - **Operator**: `EQUALS`
->   - **Value B**: `verified`
-> - **Condition 2**:
->   - **Value A**: `user_cvv_status`
->   - **Type**: `STRING`
->   - **Operator**: `EQUALS`
->   - **Value B**: `verified`
->
-> Then combine these conditions using **AND** — so the workflow only continues if both OTP and CVV statuses are `verified`.
->
-> If either of the conditions fails, the flow will follow the **false** path, allowing you to handle failed verifications gracefully.
+> #### Example  
+>  
+> Imagine you're verifying a sensitive action like a payment or login:  
+>  
+> - A user submits their **OTP** during the verification process.  
+> - Your backend fetches the correct OTP from the database and passes it to Siren.  
+>  
+> You can configure the **If Node** like this:
+>  
+> - **Value A**: `data.fetched_otp` (value retrieved from your database)  
+> - **Type**: `STRING`  
+> - **Operator**: `EQUALS`  
+> - **Value B**: `data.user_input_otp` (the OTP the user just entered)  
+>  
+> This checks if the submitted OTP matches the stored one.  
+>  
+> Now imagine you’ve added an **HTTP Node** earlier in the workflow that fetches fraud risk info for a user.  
+> You can use that API’s response too:
+>  
+> - **Value A**: `http.fraud_check.status`  
+> - **Type**: `STRING`  
+> - **Operator**: `EQUALS`  
+> - **Value B**: `approved`  
+>  
+> These conditions can then be combined using **AND** logic — so the workflow proceeds only if both checks pass.
 
 ---
 
