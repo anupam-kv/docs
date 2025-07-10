@@ -225,33 +225,70 @@ Pause the flow to wait for a recipient's response.
 
 # Template Node
 
-Send a message using a pre-built template.
+The **Template Node** is used to send messages using predefined templates across supported channels such as Email, SMS, Push, WhatsApp, and more.
 
-- Select a template from your existing list.
-- Templates can contain placeholders like `{{data.name}}` which will be replaced using input JSON.
-- Templates may include one or more channels (e.g., Email \+ SMS).
+When configuring this node, the available options vary slightly depending on whether the workflow is **Basic** or **Advanced**.
+
+To learn how to create, edit, and manage templates, visit the [Templates](TemplatesOverview) section.
+
+## Basic Workflow
+
+In a Basic workflow:
+
+- The **Parameter** section includes a **Template dropdown**.
+- All available templates are listed.
+- Templates that share the **same tag** as the workflow will appear **at the top** of the list for quicker access.
+
+You simply select the desired template, and the message will be sent using that configuration.
 
 ---
 
-## Input JSON
+## Advanced Workflow
 
-In **Advanced workflows**, you can open the **Input JSON** panel from the top-right corner.\
-This allows you to:
+In an Advanced workflow, the Template Node offers more flexibility:
 
-- View and edit the sample input structure
-- Define the `data` and `notify` sections
-- Test variable substitution in nodes using this input
+- A **radio button** lets you choose between:
+  - **Static**: Works the same way as Basic — choose a template from the dropdown list.
+  - **Dynamic**: Use variables to dynamically select the template and its version during runtime.
 
-Example:
+Under **Dynamic**, you’ll see the following fields:
 
-```json
-{
-  "data": {
+- **Template Variable**: Input field where you provide the JSON path to fetch the template name at runtime (e.g., `{{data.template_name}}`).
+- **Template Version**: Optional field to specify a particular version of the template if needed.
+- **Variable Object Path**: Defines the path to the variables object (e.g., `{{data.vars}}`) that will be substituted into the template during execution.
 
-  },
-  "notify": {
-    "email": "priya@example.com",
-    "sms": "+919999999999"
-  }
-}
-```
+This makes it possible to personalize which template gets triggered — and what values are passed — based on real-time inputs.
+
+---
+
+# Channel Node
+
+The **Channel Node** lets you send a notification through a specific channel (such as Email, SMS, WhatsApp, etc.) using a configured provider. This is different from the Template Node — here, you manually select the provider and specify recipient details instead of using a predefined template.
+
+---
+
+## Basic Workflow
+
+In a Basic workflow, the configuration is straightforward:
+
+- **Provider**: Select from a dropdown list of available providers for the chosen channel.
+- **Wait for Delivery Status**: A checkbox to indicate whether the workflow should pause until a delivery status (e.g., delivered or failed) is returned.
+
+This setup works well when you want to quickly trigger a notification using a static provider and recipient details.
+
+---
+
+## Advanced Workflow
+
+In an Advanced workflow, this node offers more flexibility:
+
+- **Static Mode** (default view):
+  - **Provider**: Same as in Basic — select a static provider from the dropdown.
+  - **Recipient Field**: Enter the value for the recipient (e.g., Email address, phone number) or use a variable via JSON path (e.g., `{{notify.email}}`).
+  - **Wait for Delivery Status**: Same checkbox as in Basic.
+- **Dynamic Mode** (enabled via toggle switch):
+  When toggled ON, the node supports fully dynamic provider routing:
+  - **Provider Integration name or JSON Path**: Input field to define the integration either directly or via a JSON path (e.g., `{{data.provider_name}}`).
+  - **Provider (dropdown)**: Still available as a fallback or default.
+  - **Recipient Field or JSON Path**: Define where to fetch recipient info dynamically — e.g., `{{notify.sms}}`.
+  - **Wait for Delivery Status**: Optional checkbox to enable delivery-based control logic.

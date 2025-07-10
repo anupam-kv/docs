@@ -40,21 +40,7 @@
           {
             "group": "Templates",
             "pages": [
-              "docs/03 - Templates/Overview",
-              {
-                "group": "Creating Template",
-                "pages": [
-                  "docs/03 - Templates/Creating Template/Dynamic Chat Template",
-                  "docs/03 - Templates/Creating Template/Email Template",
-                  "docs/03 - Templates/Creating Template/In-App Template",
-                  "docs/03 - Templates/Creating Template/Line Template",
-                  "docs/03 - Templates/Creating Template/Push Notification Template",
-                  "docs/03 - Templates/Creating Template/SMS Template",
-                  "docs/03 - Templates/Creating Template/Whatsapp Template"
-                ]
-              },
-              "docs/03 - Templates/Duplicate Template",
-              "docs/03 - Templates/Tag Template"
+              "docs/03-Templates/TemplatesOverview"
             ]
           },  
           {
