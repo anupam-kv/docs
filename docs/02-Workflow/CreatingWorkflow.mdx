@@ -8,28 +8,34 @@ description: "Learn how to create a new workflow and configure different types o
 
 This page explains how to create a new workflow in **Siren** and gives an overview of the Workflow editor.
 
-## Navigate to My Workflow
+<Steps>
+  <Step title="Navigate to My Workflow">
+    After logging into Siren:
 
-After logging into Siren:
+    Click **My Workflow** in the left navigation panel.
 
-Click **My Workflow** in the left navigation panel.
+    - You’ll see a list of all existing workflows, including both **Drafts** and **Published**.
+    - Use the **search bar** or apply filters to quickly find specific workflows by name, tag, or status.
 
-- You’ll see a list of all existing workflows, including both **Drafts** and **Published**.
-- Use the **search bar** or apply filters to quickly find specific workflows by name, tag, or status.
+    <Info>
+      In the Workflow list, you’ll find **Clone** and **Duplicate** options under the **Actions** column.
 
----
+      - **Duplicate Workflow** creates a copy of the selected workflow within the **same environment**.
+      - **Clone Workflow** lets you copy the workflow to a **different environment**, such as from staging to production.
+    </Info>
+  </Step>
+  <Step title="Add a New Workflow">
+    Click the **\+ Add Workflow** button on the top right. This opens a modal where you need to enter:
 
-## Add a New Workflow
+    - **Workflow Name** – A unique name to identify your workflow.
+    - **Description** _(optional)_ – Brief explanation of what the workflow does.
+    - **Workflow Type** – Select **Basic** or **Advanced**.
+    - **Tag** – Add one or more tags to organize and group related workflows.
 
-Click the **\+ Add Workflow** button on the top right. This opens a modal where you need to enter:
-
-- **Workflow Name** – A unique name to identify your workflow.
-- **Description** _(optional)_ – Brief explanation of what the workflow does.
-- **Workflow Type** – Select **Basic** or **Advanced**.
-- **Tag** – Add one or more tags to organize and group related workflows.
-
-Click **Save** to continue.\
-You will now be redirected to the **Workflow Editor**, where you can begin building the flow.
+    Click **Save** to continue.\
+    You will now be redirected to the **Workflow Editor**, where you can begin building the flow.
+  </Step>
+</Steps>
 
 ---
 
@@ -72,7 +78,7 @@ Click **Run flow** to test the execution path in real time.
 
 ---
 
-### 🧾 Input JSON Panel
+### Input JSON Panel
 
 Whether you're in Editor or Test mode, you’ll have access to the **Input JSON** panel.
 

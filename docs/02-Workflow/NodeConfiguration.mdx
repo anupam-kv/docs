@@ -62,8 +62,6 @@ Control nodes help your workflow make decisions and branch based on conditions o
 - [If Node](#if-node) — used for binary conditions (true/false paths)
 - [Switch Node](#switch-node) — used for multi-branch routing based on values
 
----
-
 ## If Node
 
 The **If Node** allows you to define one or more conditions, and split the workflow based on whether the condition(s) evaluate to **true** or **false**.
@@ -158,22 +156,61 @@ This allows you to streamline multi-channel workflows in a clean, organized way.
 
 ---
 
-# Template Node
+# HTTP Node
 
-Send a message using a pre-built template.
+Use the **HTTP Node** to call an external API during your workflow — for example, to fetch user data, verify an action, or enrich notifications with information from another service.
 
-- Select a template from your existing list.
-- Templates can contain placeholders like `{{data.name}}` which will be replaced using input JSON.
-- Templates may include one or more channels (e.g., Email \+ SMS).
+### Configuration Options
+
+When you add an HTTP Node, you'll see the following fields:
+
+- **Reference Name**\
+  A label used to reference this API’s response in later parts of the workflow (e.g., `user_verification`).
+- **Continue Workflow on API Failure**\
+  If checked, the workflow continues even if the API call fails. Useful for optional or non-blocking requests.
+- **Method**\
+  Choose the type of HTTP request from the following options:
+  - `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `OPTIONS`, `HEAD`
+- **URL**\
+  Enter the **API endpoint link** you want to call.
+- **Body**\
+  Required for methods like `POST`, `PUT`, or `PATCH`. You can insert variables using JSON path.
+- **Content Type**\
+  Specifies the format of the request body:
+  - `application/json`
+  - `text/plain`
+  - `text/html`
+- **Accept Type**\
+  Defines what response format you expect:
+  - `application/json`
+  - `text/plain`
+  - `text/html`
+- **Timeouts**
+  - **Connection Timeout** – Time (in milliseconds) to wait for a connection to establish.
+  - **Read Timeout** – Time (in milliseconds) to wait for the response after the connection is open.
+- **Headers**\
+  Add custom headers to the request using key-value pairs.
 
 ---
 
-# HTTP Node _(Advanced only)_
+### Example
 
-Call an external API from within the workflow and use the response to inform later steps.
+Let’s say you want to check if a user passed a fraud check before sending them a transaction alert.
 
-- Configure method (GET, POST, etc.), URL, headers, and body.
-- Response data is stored and accessible for downstream nodes.
+Here’s how you might configure the HTTP Node:
+
+- **Reference Name**: `fraud_check`
+- **Method**: `POST`
+- **URL**: `https://api.example.com/verify`
+- **Body**:
+
+  ```json
+  {
+    "userId": "{{data.user_id}}",
+    "phone": "{{data.phone_number}}"
+  }
+  
+  ```
 
 ---
 
@@ -186,7 +223,17 @@ Pause the flow to wait for a recipient's response.
 
 ---
 
-## 🧪 Input JSON
+# Template Node
+
+Send a message using a pre-built template.
+
+- Select a template from your existing list.
+- Templates can contain placeholders like `{{data.name}}` which will be replaced using input JSON.
+- Templates may include one or more channels (e.g., Email \+ SMS).
+
+---
+
+## Input JSON
 
 In **Advanced workflows**, you can open the **Input JSON** panel from the top-right corner.\
 This allows you to:

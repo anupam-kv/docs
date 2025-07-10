@@ -6,73 +6,63 @@ description: "Let us get you up and running in a few simple steps:"
 
 Follow these four steps to get started with Siren:
 
----
+<Steps>
+  <Step title="Create Your Siren Account">
+    Sign up at [Siren](https://app.trysiren.io/) using **Gmail** or **GitHub**. ~~(add manual option as well?)~~
+  </Step>
+  <Step title="Generate Your API Key">
+    ~~(user can get key at onboarding as well. should we mention?)~~
 
-### 1. Create Your Siren Account
+    After logging in:
 
-Sign up at [Siren](https://app.trysiren.io/) using **Gmail** or **GitHub**. ~~(add manual option as well?)~~
+    - Go to the **right panel** → **Settings** → **Configurations**
+    - Click **"Add API Key"** in the top right corner
+    - Enter a name for your API key
+    - Your **API Token** will be generated
 
----
+    <Warning>
+      Copy and store this token securely. It’s required to authenticate all ~~API requests.~~\
+      → [View API Reference](https://docs.trysiren.io/docs/API%20Reference)
+    </Warning>
+  </Step>
+  <Step title="Set Up Your Providers">
+    <Info>
+      A default provider named **Sample Email Provider** is already configured under the Email channel. ~~(lets give it below)~~
+    </Info>
+    To add or update providers:
 
-### 2. Generate Your API Key
+    - Go to **Settings** → **Providers** from the left panel
+    - Select a channel (SMS, Email, Push, etc.)
+    - Choose a provider and click **"Add Account"**
+    - Enter the required credentials and API key\
+      → [View Provider Setup Guide](https://docs.trysiren.io/docs/Providers)
 
-~~(user can get key at onboarding as well. should we mention?)~~
+    <Note>
+      You can add up to **~~5 accounts~~**~~ ~~across all providers.
+    </Note>
+  </Step>
+  <Step title="Send Your First Message">
+    You can start sending messages in multiple ways, depending on how you want to integrate:
 
-After logging in:
+    #### • MCP Server
 
-- Go to the **right panel** → **Settings** → **Configurations**
-- Click **"Add API Key"** in the top right corner
-- Enter a name for your API key
-- Your **API Token** will be generated
+    Connect the MCP (Model Context Protocol) server to let tools interact with Siren through function calls for messaging and other actions.\
+    [Go to MCP](/docs/MCP) to see the integration guide
 
-<Warning>
-  Copy and store this token securely. It’s required to authenticate all ~~API requests.~~\
-  → [View API Reference](https://docs.trysiren.io/docs/API%20Reference)
-</Warning>
+    #### • AI Agent Toolkit
 
----
+    ~~After integrating the AI agent toolkit, you can go to your LLM or Conversational AI and give a prompt to send a message with the details~~. \
+    [Go to Toolkit Setup](/docs/MCP) to see the integration guide
 
-### 3. Set Up Your Providers
+    #### • SDK
 
-<Info>
-  A default provider named **Sample Email Provider** is already configured under the Email channel. ~~(lets give it below)~~
-</Info>
+    Use the Siren Python SDK to call built-in functions for sending messages and triggering workflows directly from your backend.\
+    [Go to SDK Docs](https://docs.trysiren.io/docs/SDK) to see the integration guide
 
-To add or update providers:
+    #### • API
 
-- Go to **Settings** → **Providers** from the left panel
-- Select a channel (SMS, Email, Push, etc.)
-- Choose a provider and click **"Add Account"**
-- Enter the required credentials and API key\
-  → [View Provider Setup Guide](https://docs.trysiren.io/docs/Providers)
-
-<Note>
-  You can add up to **~~5 accounts~~**~~ ~~across all providers.
-</Note>
-
----
-
-### 4. Send Your First Message
-
-You can start sending messages in multiple ways, depending on how you want to integrate:
-
-#### • MCP Server
-
-Connect the MCP (Model Context Protocol) server to let tools interact with Siren through function calls for messaging and other actions.\
-[Go to MCP](/docs/MCP) to see the integration guide
-
-#### • AI Agent Toolkit
-
-~~After integrating the AI agent toolkit, you can go to your LLM or Conversational AI and give a prompt to send a message with the details~~. \
-[Go to Toolkit Setup](/docs/MCP) to see the integration guide
-
-#### • SDK
-
-Use the Siren Python SDK to call built-in functions for sending messages and triggering workflows directly from your backend.\
-[Go to SDK Docs](https://docs.trysiren.io/docs/SDK) to see the integration guide
-
-#### • API
-
-Use Siren’s flexible, lightweight APIs to send messages without creating a full workflow. You can trigger one-off notifications using APIs. Go to ~~[QuickSend ](/docs/01 - Getting Started/QuickSend)~~to see how to send message using APIs
+    Use Siren’s flexible, lightweight APIs to send messages without creating a full workflow. You can trigger one-off notifications using APIs. Go to ~~[QuickSend ](/docs/01 - Getting Started/QuickSend)~~to see how to send message using APIs
+  </Step>
+</Steps>
 
 ---
