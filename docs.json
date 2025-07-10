@@ -32,9 +32,9 @@
           {
             "group": "Workflows",
             "pages": [              
-              "docs/02 - Workflows/WorkflowOverview",
-              "docs/02 - Workflows/CreatingWorkflow",
-              "docs/02 - Workflows/NodeConfiguration"
+              "docs/02 - Workflow/WorkflowOverview",
+              "docs/02 - Workflow/CreatingWorkflow",
+              "docs/02 - Workflow/NodeConfiguration"
             ]
           },
           {
