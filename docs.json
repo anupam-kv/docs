@@ -131,24 +131,24 @@
           }
         ]
       },
-      {
-        "tab": "MCP",
-        "groups": [
-          {
-            "group": "MCP",
-            "pages": [
-              "docs/MCP"
-            ]
-          }
-        ]
-      },
-      {
+       {
         "tab": "AI Agent Toolkit",
         "groups": [
           {
             "group": "AI Agent Toolkit",
             "pages": [
               "docs/AI Agent toolkit"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "MCP Server",
+        "groups": [
+          {
+            "group": "MCP Server",
+            "pages": [
+              "docs/MCP"
             ]
           }
         ]
@@ -201,7 +201,7 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
+      "label": "Get an API Key",
       "href": "https://app.trysiren.io/signup"
     }
   },
