@@ -1,20 +1,21 @@
 ---
 sidebar_position: "2"
 title: "Create Workflow"
-description: "Learn how to create a new workflow and configure different types of nodes  (or this page can be just about node configuration and we can tell about the navigation, and add new workflow along with the workflow editor UI overview in the previous page)"
+description: "Learn how to create a new workflow and configure different types of nodes"
 ---
 
 # Create Workflow
 
-This page explains how to create a new workflow in **Siren** and gives an overview of the different nodes you can configure within the editor.
+This page explains how to create a new workflow in **Siren** and gives an overview of the Workflow editor.
 
 ## Navigate to My Workflow
 
 After logging into Siren:
 
-1. Click **My Workflow** in the left navigation panel.
-2. You’ll see a list of all existing workflows, including both **Drafts** and **Published**.
-3. Use the **search bar** or apply filters to quickly find specific workflows by name, tag, or status.
+Click **My Workflow** in the left navigation panel.
+
+- You’ll see a list of all existing workflows, including both **Drafts** and **Published**.
+- Use the **search bar** or apply filters to quickly find specific workflows by name, tag, or status.
 
 ---
 
@@ -32,34 +33,31 @@ You will now be redirected to the **Workflow Editor**, where you can begin build
 
 ---
 
-## Workflow Editor UI
+# Workflow Editor UI
 
 Once you've created and saved a workflow, you'll enter the **Workflow Editor**, a visual interface where you can design, test, and configure your workflow.
 
 ![Workflow Editor canvas](/assets/images/editor/start-node.png)
 
-### Editor Layout
+At the **top-right corner**, you'll find the **Publish** button. Use this to make the workflow live once you're ready.
+
+Near the **top-left**, beside the workflow name, you can access **Version History** to view or revert to earlier versions of the workflow.
+
+## Editor Layout
 
 The editor starts with a single **Start Node**, which is fixed and cannot be modified. All nodes are added from this starting point.
 
-To add a new step, click the **`+`** icon below any node. This opens a list of available nodes (such as Wait, If, Switch, Template, HTTP, or Chat). Depending on whether you've created a **Basic** or **Advanced** workflow, the available nodes may differ, but all compatible options are shown in the list.
+To add a new step, click the `+` icon below any node. This opens a list of available nodes (such as Wait, If, Switch, HTTP, Chat, Template or Provider). Depending on whether you've created a **Basic** or **Advanced** workflow, the available nodes may differ, but all compatible options are shown in the list.
 
-> We cover node types and their behavior in more detail in the [Create Workflow](../create-workflow) page.
+> We cover node types and their behavior in more detail in the [Node configuration](../create-workflow) page.
 
----
+When you're done building your flow, head to the **top-right corner** and click **Publish** to push the workflow live.
 
-### Node Configuration
-
-Each node you add to the canvas opens a configuration panel when clicked. From there, you can:
-
-- Select or attach templates
-- Set static values (e.g., a 10-second wait)
-- In Advanced workflows, use **variables** with JSON paths to dynamically configure node behavior
-- Add conditional branches, fallback logic.etc
+Need to check what changed or roll back to an older version? You’ll find **Version History** next to the workflow name on the **top-left** — perfect for tracking edits as your workflow evolves.
 
 ---
 
-### Test Mode
+## Test Mode
 
 You can toggle between **Editor** and **Test** mode at the top of the screen.
 

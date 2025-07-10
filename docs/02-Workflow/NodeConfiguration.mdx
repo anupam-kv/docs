@@ -1,18 +1,24 @@
 ---
 sidebar_position: "3"
-title: "New file"
+title: "Node Configuration"
 description: "Description of your new file."
 ---
 
-## Configure Workflow Nodes
+Earlier, we covered how to create a workflow and got familiar with the Workflow Editor. Now, let’s take a closer look at how each **node** works.
 
-Inside the editor, you build your workflow by adding nodes. Each node represents a specific action or decision point. Click the **`+`** button to choose a node and then click on the node to configure it.
+Inside the editor, you build your workflow by connecting nodes — each representing a specific action, condition, or message step. To add a node, click the `+` icon below an existing one. Then click the node to open its configuration panel.
 
-Here’s an overview of the different node types you may use:
+Each node allows you to define how that step behaves. You can:
+
+- Set static values or attach message templates
+- Add conditions, delays, or branching logic
+- In **Advanced workflows**, configure nodes dynamically using **variables** with JSON paths
+
+The sections below cover each node type in detail and explain the options available for configuration.
 
 ---
 
-### Wait Node
+# Wait Node
 
 The **Wait Node** lets you pause the workflow before proceeding to the next step. This is useful when you want to introduce a delay or wait until a specific date and time before sending a message or continuing the flow.
 
@@ -35,7 +41,7 @@ This option is ideal for introducing consistent gaps between workflow steps.
 
 ---
 
-#### Additional in Advanced Workflow
+## Additional in Advanced Workflow
 
 In **Advanced workflows**, an extra field appears below the static options:
 
@@ -49,25 +55,89 @@ This allows the wait duration to be determined at runtime, based on input data.
 
 ---
 
-### If Node
+# Control Nodes
 
-Conditionally branch the workflow based on a `true/false` evaluation.
+Control nodes help your workflow make decisions and branch based on conditions or variable values. Siren currently supports two types of control nodes:
 
-- Define a boolean condition using a variable or fixed value.
-- Use JSON paths like `{{data.isSubscribed}} == true`.
-
----
-
-### Switch Node
-
-Branch the workflow into multiple paths based on the value of a specific field.
-
-- Provide a variable (e.g., `{{data.userType}}`) and define cases like "new", "existing", "premium", etc.
-- A default path can be configured for unmatched cases.
+- [If Node](#if-node) — used for binary conditions (true/false paths)
+- [Switch Node](#switch-node) — used for multi-branch routing based on values
 
 ---
 
-### Template Node
+## If Node
+
+The **If Node** allows you to define one or more conditions, and split the workflow based on whether the condition(s) evaluate to **true** or **false**.
+
+### Basic Workflow
+
+In a Basic workflow, you can configure only **one condition**.
+
+![If Node - Basic](/assets/images/editor/if-basic.png)
+
+- Define a single condition with:
+  - **Value A** (input)
+  - **Type** (String, Number, Boolean, etc.)
+  - **Comparison Operator** (Equals, Not Equals, etc.)
+  - **Value B**
+
+If the condition is met, the workflow continues along the **true** path. Otherwise, it proceeds along the **false** path.
+
+### Advanced Workflow
+
+In an Advanced workflow, the If Node becomes more powerful. You can:
+
+![If Node - Advanced](/assets/images/editor/if-advanced.png)
+
+- Add multiple conditions
+- Combine them using **AND** / **OR** logic
+
+#### Example
+
+> Let’s say you're validating a sensitive transaction and want to ensure both **OTP** and **CVV** are verified:
+>
+> - **Condition 1**: `data.otp_verified` is `true`
+> - **Condition 2**: `data.cvv_verified` is `true`
+>
+> Combine them with **AND**, so the workflow proceeds only if **both** validations succeed.
+
+---
+
+## Switch Node
+
+The **Switch Node** is used to split the workflow into **multiple paths** based on the value of a variable, similar to a `switch-case` logic in programming.
+
+### Basic Workflow
+
+In Basic mode, the switch has a **Name** field and allows defining up to **9 cases**, including a **default (fallback)** case.
+
+![Switch Node - Basic](/assets/images/editor/switch-basic.png)
+
+- Each case is a **static value**.
+- You can route each case to a different set of nodes.
+- The **default** route will be used if no match is found.
+
+### Advanced Workflow
+
+In an Advanced workflow, you'll see a **Switch Expression** field instead of name.
+
+![Switch Node - Advanced](/assets/images/editor/switch-advanced.png)
+
+- Enter a **JSON variable path** (e.g., `data.channel`) to evaluate dynamically.
+- Add up to 9 cases to match the expression.
+- Just like in Basic mode, one fallback case is always present by default.
+
+#### Example
+
+> Suppose you want to send a notification using the right channel based on user preference.
+>
+> - Use `data.channel` as your switch expression.
+> - Add cases like `email`, `sms`, and `push`.
+> - Connect each case to the appropriate Template Node.
+> - Let the fallback handle any unexpected values.
+
+---
+
+# Template Node
 
 Send a message using a pre-built template.
 
@@ -77,7 +147,7 @@ Send a message using a pre-built template.
 
 ---
 
-### HTTP Node _(Advanced only)_
+# HTTP Node _(Advanced only)_
 
 Call an external API from within the workflow and use the response to inform later steps.
 
@@ -86,7 +156,7 @@ Call an external API from within the workflow and use the response to inform lat
 
 ---
 
-### Chat Node _(Advanced only)_
+# Chat Node _(Advanced only)_
 
 Pause the flow to wait for a recipient's response.
 
