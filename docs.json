@@ -48,7 +48,7 @@
               "docs/02-Workflow/NodeConfiguration/TemplateNode",
               "docs/02-Workflow/NodeConfiguration/WaitNode"
             ]
-          }
+          },
           {
             "group": "Templates",
             "pages": [
