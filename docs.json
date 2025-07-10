@@ -26,19 +26,15 @@
             "pages": [
               "docs/01 - Getting Started/Overview",
               "docs/01 - Getting Started/Quick-start-Guide",
-              "docs/01 - Getting Started/QuickSend",
-              "docs/01 - Getting Started/Migrate to Siren"
+              "docs/01 - Getting Started/QuickSend"
             ]
           },
           {
             "group": "Workflows",
-            "pages": [
-              "docs/02 - Workflows/Sending-your-first-Notification",
-              "docs/02 - Workflows/Workflow Overview",
-              "docs/02 - Workflows/Creating Workflows",
-              "docs/02 - Workflows/Design Workflow Logic",
-              "docs/02 - Workflows/Test & Trigger",
-              "docs/02 - Workflows/Manage Workflows"
+            "pages": [              
+              "docs/02 - Workflows/WorkflowOverview",
+              "docs/02 - Workflows/CreatingWorkflow",
+              "docs/02 - Workflows/NodeConfiguration"
             ]
           },
           {
