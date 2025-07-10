@@ -1,0 +1,119 @@
+---
+sidebar_position: "3"
+title: "New file"
+description: "Description of your new file."
+---
+
+## Configure Workflow Nodes
+
+Inside the editor, you build your workflow by adding nodes. Each node represents a specific action or decision point. Click the **`+`** button to choose a node and then click on the node to configure it.
+
+Here’s an overview of the different node types you may use:
+
+---
+
+### Wait Node
+
+The **Wait Node** lets you pause the workflow before proceeding to the next step. This is useful when you want to introduce a delay or wait until a specific date and time before sending a message or continuing the flow.
+
+When you click on the Wait Node, a configuration panel appears with a **Parameters** tab. Here, you can choose how the wait should be defined:
+
+#### Duration
+
+- Set a fixed delay using:
+  - **Days**
+  - **Hours**
+  - **Minutes**
+  - **Seconds**
+
+This option is ideal for introducing consistent gaps between workflow steps.
+
+#### Until
+
+- Define a specific **date and time** when the workflow should resume.
+- Select a **Time Zone** to align the timing with the recipient’s or system’s locale.
+
+---
+
+#### Additional in Advanced Workflow
+
+In **Advanced workflows**, an extra field appears below the static options:
+
+- **Wait Variable**:
+  - A field to enter a dynamic wait value using a JSON path.
+  - Example: `{{data.waitTime}}`
+
+This allows the wait duration to be determined at runtime, based on input data.
+
+> If you use a **Wait Variable**, it will override whatever you set in Duration or Until. Just make sure the variable returns a valid time value — like a number in seconds or a proper date/time — so the workflow knows how long to wait.
+
+---
+
+### If Node
+
+Conditionally branch the workflow based on a `true/false` evaluation.
+
+- Define a boolean condition using a variable or fixed value.
+- Use JSON paths like `{{data.isSubscribed}} == true`.
+
+---
+
+### Switch Node
+
+Branch the workflow into multiple paths based on the value of a specific field.
+
+- Provide a variable (e.g., `{{data.userType}}`) and define cases like "new", "existing", "premium", etc.
+- A default path can be configured for unmatched cases.
+
+---
+
+### Template Node
+
+Send a message using a pre-built template.
+
+- Select a template from your existing list.
+- Templates can contain placeholders like `{{data.name}}` which will be replaced using input JSON.
+- Templates may include one or more channels (e.g., Email \+ SMS).
+
+---
+
+### HTTP Node _(Advanced only)_
+
+Call an external API from within the workflow and use the response to inform later steps.
+
+- Configure method (GET, POST, etc.), URL, headers, and body.
+- Response data is stored and accessible for downstream nodes.
+
+---
+
+### Chat Node _(Advanced only)_
+
+Pause the flow to wait for a recipient's response.
+
+- Define the conditions under which the flow should proceed (e.g., on receiving a message).
+- Set a timeout after which the workflow will exit or follow an alternate path if no response is received.
+
+---
+
+## 🧪 Input JSON
+
+In **Advanced workflows**, you can open the **Input JSON** panel from the top-right corner.\
+This allows you to:
+
+- View and edit the sample input structure
+- Define the `data` and `notify` sections
+- Test variable substitution in nodes using this input
+
+Example:
+
+```json
+{
+  "data": {
+
+  },
+  "notify": {
+    "email": "priya@example.com",
+    "sms": "+919999999999"
+  }
+}
+```

@@ -1,8 +1,103 @@
 ---
 sidebar_position: "2"
-title: "Workflow Editor UI"
-description: "A walkthrough of the workflow editor interface"
+title: "Create Workflow"
+description: "Learn how to create a new workflow and configure different types of nodes  (or this page can be just about node configuration and we can tell about the navigation, and add new workflow along with the workflow editor UI overview in the previous page)"
 ---
 
+# Create Workflow
 
-Let us take a look at the User interface where you can design, edit and test the workflow.
+This page explains how to create a new workflow in **Siren** and gives an overview of the different nodes you can configure within the editor.
+
+## Navigate to My Workflow
+
+After logging into Siren:
+
+1. Click **My Workflow** in the left navigation panel.
+2. You’ll see a list of all existing workflows, including both **Drafts** and **Published**.
+3. Use the **search bar** or apply filters to quickly find specific workflows by name, tag, or status.
+
+---
+
+## Add a New Workflow
+
+Click the **\+ Add Workflow** button on the top right. This opens a modal where you need to enter:
+
+- **Workflow Name** – A unique name to identify your workflow.
+- **Description** _(optional)_ – Brief explanation of what the workflow does.
+- **Workflow Type** – Select **Basic** or **Advanced**.
+- **Tag** – Add one or more tags to organize and group related workflows.
+
+Click **Save** to continue.\
+You will now be redirected to the **Workflow Editor**, where you can begin building the flow.
+
+---
+
+## Workflow Editor UI
+
+Once you've created and saved a workflow, you'll enter the **Workflow Editor**, a visual interface where you can design, test, and configure your workflow.
+
+![Workflow Editor canvas](/assets/images/editor/start-node.png)
+
+### Editor Layout
+
+The editor starts with a single **Start Node**, which is fixed and cannot be modified. All nodes are added from this starting point.
+
+To add a new step, click the **`+`** icon below any node. This opens a list of available nodes (such as Wait, If, Switch, Template, HTTP, or Chat). Depending on whether you've created a **Basic** or **Advanced** workflow, the available nodes may differ, but all compatible options are shown in the list.
+
+> We cover node types and their behavior in more detail in the [Create Workflow](../create-workflow) page.
+
+---
+
+### Node Configuration
+
+Each node you add to the canvas opens a configuration panel when clicked. From there, you can:
+
+- Select or attach templates
+- Set static values (e.g., a 10-second wait)
+- In Advanced workflows, use **variables** with JSON paths to dynamically configure node behavior
+- Add conditional branches, fallback logic.etc
+
+---
+
+### Test Mode
+
+You can toggle between **Editor** and **Test** mode at the top of the screen.
+
+![Test Mode](/assets/images/editor/test-mode.png)
+
+- **Editor Mode** lets you build and edit the workflow.
+- **Test Mode** allows you to simulate how the workflow would run using mock data.
+
+In **Advanced workflows only**, you'll see a **Test Code** panel on the left. This lets you run the flow with sample values and observe how the logic behaves.
+
+Click **Run flow** to test the execution path in real time.
+
+---
+
+### 🧾 Input JSON Panel
+
+Whether you're in Editor or Test mode, you’ll have access to the **Input JSON** panel.
+
+![Input JSON](/assets/images/editor/input-json.png)
+
+The input JSON is divided into two keys:
+
+- `data`: Custom data used inside nodes or for conditions
+- `notify`: Recipient details mapped to various channels
+
+In **Advanced workflows**, this JSON is editable. You can update values in real time to simulate dynamic content or branching conditions during testing.
+
+Here’s an example structure:
+
+```json
+{
+  "data": {
+    "name": "John",
+    "event": "OTP"
+  },
+  "notify": {
+    "email": "user@example.com",
+    "sms": "+911234567890"
+  }
+}
+```
