@@ -1,0 +1,49 @@
+---
+title: "Workflows"
+description: "Automate message flows using Siren’s visual workflow builder."
+---
+
+## Workflows in Siren
+
+Workflows in **Siren** let you design powerful, no-code automation for how notifications are triggered, routed, personalized, and delivered across multiple channels. They provide a flexible and visual way to build message flows that adapt to your logic and data — without requiring any engineering effort.
+
+Inside the workflow editor, you can define a series of actions and decisions by adding nodes using a guided, point-and-click interface. Each node can be individually configured to control how and when notifications are sent, what data they use, and how the workflow behaves based on dynamic inputs.
+
+Once your workflow is ready, you can **publish** it to make it live. Published workflows can then be triggered in two ways:
+
+- **Via API**, by making a call to Siren’s `/trigger-workflow` endpoint — typically from your application backend or any system event you define.
+- **Via the AI Agent Toolkit**, which can learn from documentation and intelligently trigger the appropriate workflow based on context.
+
+API-triggered workflows are generally called when an event happens in your product — such as a user action or system update. The API payload includes details like the workflow name, recipient information, and any dynamic variables needed for personalization.
+
+Whether you're sending a simple alert or orchestrating a multi-step notification journey, workflows in Siren give you the tools to automate and scale your communication strategy with complete control and visibility.
+
+---
+
+## Types of Workflows in Siren
+
+When creating a new workflow in Siren, you can choose between **Basic** and **Advanced** workflows. Both types use the same visual editor and support the core set of features needed to create end-to-end notification logic — but Advanced workflows offer additional nodes and greater flexibility.
+
+### Basic Workflow
+
+Best suited for simple automation flows, Basic workflows support:
+
+- **Wait Node** – Add a delay between steps using a fixed duration (in days, hours, minutes, seconds).
+- **Control Nodes**:
+  - **If Node** – Branch the flow based on a true/false condition.
+  - **Switch Node** – Route to multiple paths based on a specific field value.
+
+Basic workflows are ideal when the logic is straightforward and does not require real-time external data or dynamic configuration.
+
+### Advanced Workflow
+
+Advanced workflows offer everything available in Basic workflows, plus additional features for more complex, dynamic use cases:
+
+- **HTTP Node** – Make API calls to external services and use the response to shape your workflow logic.
+- **Chat Node** – Leverage Siren’s AI capabilities to generate content or perform actions based on your documentation.
+
+Advanced workflows also support **dynamic variables** across all nodes. For instance:
+
+- In the **Wait Node**, in addition to setting a fixed duration, you can use a variable from the input payload (via JSON path) to define how long to wait — enabling fully dynamic timing based on real-time data.
+
+This makes Advanced workflows more powerful and adaptable when you're working with rich data inputs, personalized flows, or need to coordinate actions with external systems.

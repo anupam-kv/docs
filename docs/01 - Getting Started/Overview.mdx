@@ -1,40 +1,124 @@
 ---
-sidebar_position: 1
+sidebar_position: "1"
+title: "What is Siren?"
 ---
 
-# 
+**Welcome to Siren\!**
 
-Siren is a communication infrastructure platform purpose-built for **AI agents** and automated systems. Instead of manually integrating multiple messaging providers, Siren acts as the **communication rails**—handling message delivery, routing, and orchestration across channels.
+If you are building a product that ~~needs to send~~ notifications, whether Email, SMS, push alerts, or chat messages, you are in the right place. Siren is a flexible notification platform that helps teams design, automate, and send messages across multiple channels. And the best part? You do not need to spend weeks stitching together different tools, everything you need is in one place. Let's walk you through the basics so you can get up and running quickly.
 
-It empowers your AI agents to trigger, manage, and optimize real-time communication with users via SMS, Email, WhatsApp, Push, and In-App messages—all from a single, unified interface.
+Siren is designed to adapt to your team’s workflow; whether you’re setting up onboarding emails, transactional alerts, or multi-step communication flows. With a UI designed for easy and seamless integration, Siren ensures that the right message reaches the right person through the right channel.
 
-## Why Siren?
+## Why Teams Choose Siren
 
-- **Built for AI-Driven Communication:** Enable your agents to engage users contextually, using Siren’s APIs and SDKs to trigger messages, workflows, and campaigns with precision.
-- **Unified Messaging Infrastructure:** Skip the complexity of managing multiple vendor APIs. Siren abstracts channel-level logic and handles provider integration, retries, failovers, and status tracking.
-- **Composability & Control:** Design notification flows, manage preferences, and set delivery conditions—all through intuitive workflows that your AI agents can programmatically control.
+- **AI agent-ready architecture:** Siren includes a dedicated AI agent toolkit that can learn from the documentation and automatically handle backend integration into your systems. Once integrated, the agent can perform a wide range of actions, from sending messages to configuring notification webhooks.
+- **Seamless Integration:** We value your time. You can integrate Siren into your systems and trigger notifications in less than a minute. Whether you're using the ~~UI~~ or APIs, getting started is frictionless.
+- **~~Intuitive notification pipeline~~ builder:** Setting up automated message flows in Siren doesn’t require technical expertise. The intuitive no-code interface lets you design communication journeys visually, helping teams move fast without waiting for code changes.
+- **Move fast with direct messaging:** When speed matters, Siren gives you the ability to send messages instantly using a single API call and ~~other methods~~. Whether it's a critical update or a time-sensitive announcement, you can reach users across any channel without building a full notification logic.
+- **Built-in visibility and reliability:** Siren helps you stay in control at all times. You have full visibility into your notifications, and built-in fallback logic ensures messages are rerouted through alternate channels if the primary one fails. That way, nothing important slips through.
+- **~~Simpler APIs with minimal payloads~~**~~ Siren makes it easy for developers and systems to integrate with clear, compact API structures. You don’t need to understand deeply nested formats or complex schemas to trigger a workflow or send a message; just pass the essential data, and Siren takes care of the rest.~~
 
-## What You Can Do
+## What Siren Offers
 
-- **Connect Once, Communicate Everywhere:**
-  Use one API to reach users over SMS, Email, WhatsApp, Push, and In-App.
-- **Trigger Smart Workflows:**
-  Let your agents initiate messaging logic based on user actions, external events, or system states.
-- **Manage Campaigns at Scale:**
-  Deploy personalized, multi-step messaging campaigns—automated and optimized for engagement.
-- **Track & Iterate:**
-  Access real-time dashboards and logs to monitor delivery status, user interaction, and performance metrics.
+Siren is made up of a few key parts that work together to help you send smart, scalable notifications without complexity.
 
-## Use Cases
+### Dashboard
 
-- **Agent-to-User Communication**
-  Equip AI agents with the ability to send real-time alerts, updates, or confirmations directly to users through the most effective channel.
-- **Conversational Campaigns**
-  Automate messaging sequences driven by user behavior, campaign goals, or AI model outputs.
-- **Operational Messaging**
-  Schedule and send notifications for reminders, verifications, and system events with full reliability.
+The **Siren dashboard** gives you a quick snapshot of your notification system's performance. It shows metrics like total messages sent, delivery rates, channel performance, and workflow activity, all filterable by time range. You can also trigger workflows or campaigns directly from the dashboard, making it a central hub for monitoring and action.
 
----
+### Templates
 
-Ready to build with Siren?
-👉 Head over to the [Quick Start Guide](./Quick-start-Guide) to set up your project and start [sending your first notification](./Sending-your-first-Notification).
+Templates in Siren let you create consistent, reusable message formats that work across multiple channels, including Email, SMS, Push, WhatsApp, and more. Instead of writing a new message every time, you define a template once and personalize it with variables like `{{Name}}`.
+
+Each template can support multiple channels within the same definition. For example, you can add an email version and a push notification version of the same message in a single template, each version will have its own channel-specific formatting and content.
+
+You can:
+
+- Create templates from the UI using the built-in editor
+- Add and edit content for different channels individually
+- Add variables to personalize messages, allowing a single template to serve multiple users
+- Manage templates via API if you prefer a backend-driven approach
+- Ask your AI agent to manage templates for you
+
+Templates are at the heart of message customisation in Siren. Once created, they can be attached to workflows.
+
+### Workflows
+
+Workflows enable you to define and automate your notification logic. A workflow represents a series of steps that are executed when triggered by either an API call or a scheduled event. These steps determine how and when messages are sent, what content they contain, and through which providers they are delivered.
+
+Using Siren's no-code visual editor, you can build workflows that include:
+
+- **Connecting a provider**, which defines the external service (e.g., Twilio, SendGrid, Slack, Gmail) used for message delivery.
+- **Linking message templates** that determine the content and formatting for each channel.
+- **Configuring actions**, such as introducing delays before sending the message, branching based on conditions, or tracking responses from the recipient.
+
+This setup ensures that your notification system is both flexible and reliable, with full control over the flow and behaviour of every message sent.
+
+### Providers
+
+Siren supports a wide range of communication channels like Email, SMS, WhatsApp, Push, Chat, In-App. You can send messages through any of these channels individually or combine them within the same workflow to create multi-channel notification experiences.
+
+Each channel is mapped to one or more **providers**, which are the third-party services responsible for delivering the actual messages. For example, you might use SendGrid for Email, MessageBird for SMS, or OneSignal for Push. Siren allows you to configure and manage these provider connections.
+
+Here is a list of providers that Siren gives:
+
+- **EMAIL**- Gmail, Mailchimp, Mailgun, Outlook, Postmark, SendGrid, SES
+- **SMS** - Kaleyra.io, MessageBird, MSG91, Plivo, Twilio
+- **WHATSAPP**- GUPSHUP, Meta, MSG91, Twilio, WATI
+- **PUSH** - FCM, OneSignal
+- **CHAT** - Discord, Line, Microsoft Teams, Slack
+
+Siren also offers an In-App channel that works directly within your Siren account.
+
+### Campaign
+
+Campaigns let you define and message a targeted group of users, whether you're sending a daily update, a special promotion, or an announcement. You can create your audience using an existing cohort or build a new one by importing user data from your database or a CSV file.
+
+Siren also offers a built-in Campaign AI that generates personalized campaigns for you. Just describe your goal in conversational language, and it will configure the campaign, all tailored to your use case.
+
+### Cohort
+
+A **cohort** in Siren is a group of users who share common attributes or behaviors — such as signing up recently, using a specific feature, or coming from a certain region. Organizing users into cohorts helps you send more relevant, targeted messages.
+
+You can create cohorts in several ways:
+
+- **Manually**: Add users through the UI or upload a CSV file
+- **Mixpanel integration**: Import behavior-based cohorts you've already created
+- **Data source connection**: Sync cohorts directly from databases or warehouses like PostgreSQL, BigQuery, or Snowflake
+
+Whether you’re sending a reminder to users who abandoned checkout or announcing a feature to premium users in India, cohorts help ensure your messages reach the right audience with precision.
+
+### Workspace
+
+A **workspace** in Siren is a dedicated environment where you manage your templates, workflows, users, and campaigns. Siren provides three built-in workspaces:
+
+- **Sandbox** – for early exploration and experiments
+- **Staging** – for testing workflows and templates before going live
+- **Production** – for sending live notifications to real users
+
+Each workspace is isolated from the others, allowing you to build, test, and deploy safely without impacting your production data or users.
+
+### Webhook
+
+Siren uses webhooks to keep your systems in sync with what’s happening behind the scenes. You can add a provider’s webhook URL to receive real-time delivery updates directly from services like Twilio or SendGrid.
+
+Siren also supports two built-in webhooks:
+
+- The **Notifications Webhook** lets you instantly receive events like delivery or failure as they happen.
+- The **Inbound Message Webhook** captures replies or incoming messages from users and passes them to your system.
+
+With these in place, you stay updated on both outbound and inbound messages — without polling or manual checks.
+
+### Unified Logs
+
+Logs give you a detailed view of every workflow event, including whether a message was sent or failed, when the workflow was triggered, and what actions were taken. You’ll also find a summary of the workflow, response data from the provider, the message content, and other useful debug information. It’s your one-stop place to track, verify, and troubleshoot every notification run.
+
+### User
+
+The **Users** section in Siren lets you manage the people who will receive your notifications. You can add users manually, upload them in bulk using a CSV file, or import data from connected sources. Each user profile can store multiple channel identifiers, such as email, phone number, push token, or Slack ID, so messages can be routed through the appropriate channel.
+
+You can also define custom properties for each user, which can later be used for personalization, targeting, or cohort segmentation.
+
+## Next step
+
+With basics covered. let's move on to configuring Siren so you can start delivering your first message.
