@@ -47,7 +47,7 @@ In **Advanced workflows**, an extra field appears below the static options:
 
 - **Wait Variable**:
   - A field to enter a dynamic wait value using a JSON path.
-  - Example: `{{data.waitTime}}`
+  - Example: `{{workflow.data.time}}`
 
 This allows the wait duration to be determined at runtime, based on input data.
 
@@ -93,37 +93,37 @@ In an Advanced workflow, the If Node becomes more powerful. You can:
 - Combine them using **AND** / **OR** logic
 - Use dynamic data from external APIs or workflow input using JSON paths
 
-> #### Example  
->  
-> Imagine you're verifying a sensitive action like a payment or login:  
->  
-> - A user submits their **OTP** during the verification process.  
-> - Your backend fetches the correct OTP from the database and passes it to Siren.  
->  
+> #### Example
+>
+> Imagine you're verifying a sensitive action like a payment or login:
+>
+> - A user submits their **OTP** during the verification process.
+> - Your backend fetches the correct OTP from the database and passes it to Siren.
+>
 > You can configure the **If Node** like this:
->  
-> - **Value A**: `data.fetched_otp` (value retrieved from your database)  
-> - **Type**: `STRING`  
-> - **Operator**: `EQUALS`  
-> - **Value B**: `data.user_input_otp` (the OTP the user just entered)  
->  
-> This checks if the submitted OTP matches the stored one.  
->  
-> Now imagine you’ve added an **HTTP Node** earlier in the workflow that fetches fraud risk info for a user.  
+>
+> - **Value A**: `{workflow.input.user.otp}` (value retrieved from your database)
+> - **Type**: `STRING`
+> - **Operator**: `EQUALS`
+> - **Value B**: `data.user_input_otp` (the OTP the user just entered)
+>
+> This checks if the submitted OTP matches the stored one.
+>
+> Now imagine you’ve added an **HTTP Node** earlier in the workflow that fetches fraud risk info for a user.\
 > You can use that API’s response too:
->  
-> - **Value A**: `http.fraud_check.status`  
-> - **Type**: `STRING`  
-> - **Operator**: `EQUALS`  
-> - **Value B**: `approved`  
->  
+>
+> - **Value A**: `http.fraud_check.status`
+> - **Type**: `STRING`
+> - **Operator**: `EQUALS`
+> - **Value B**: `approved`
+>
 > These conditions can then be combined using **AND** logic — so the workflow proceeds only if both checks pass.
 
 ---
 
 ## Switch Node
 
-The **Switch Node** is used to split the workflow into **multiple paths** based on the value of a variable — similar to a `switch-case` logic in programming.
+The **Switch Node** is used to split the workflow into **multiple paths** based on the value of a variable, similar to a `switch-case` logic in programming.
 
 ### Basic Workflow
 
@@ -157,8 +157,6 @@ In an Advanced workflow, you'll see a **Switch Expression** field instead of a n
 This allows you to streamline multi-channel workflows in a clean, organized way.
 
 ---
-
-Let me know when you're ready to add **Template**, **Wait**, **Chat**, or **HTTP** nodes under an “Action Nodes” section\!
 
 # Template Node
 
