@@ -1,0 +1,47 @@
+---
+sidebar_position: "4"
+title: 'HTTP Node'
+description: 'Description of your new file.'
+---
+
+## HTTP Node
+
+<Note>
+    This node is only available in Advanced Workflow
+</Note>
+
+Use the **HTTP Node** to call an external API during your workflow — for example, to fetch user data, verify an action, or enrich notifications with information from another service.
+
+### Configuration Options
+
+When you add an HTTP Node, you'll see the following fields:
+
+- **Reference Name**: A label used to reference this API’s response in later parts of the workflow (e.g., `user_verification`).
+- **Continue Workflow on API Failure**: If checked, the workflow continues even if the API call fails. Useful for optional or non-blocking requests.
+- **Method**: Choose the type of HTTP request from the following options: `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `OPTIONS`, `HEAD`.
+- **URL**: Enter the **API endpoint link** you want to call.
+- **Body**: Required for methods like `POST`, `PUT`, or `PATCH`. You can insert variables using JSON path.
+- **Content Type**: Specifies the format of the request body: `application/json`, `text/plain`, `text/html`.
+- **Accept Type**: Defines what response format you expect: `application/json`, `text/plain`, `text/html`.
+- **Timeouts**
+  - **Connection Timeout** – Time (in milliseconds) to wait for a connection to establish.
+  - **Read Timeout** – Time (in milliseconds) to wait for the response after the connection is open.
+- **Headers**: Add custom headers to the request using key-value pairs.
+
+### Example
+
+Let’s say you want to check if a user passed a fraud check before sending them a transaction alert.
+
+Here’s how you might configure the HTTP Node:
+
+- **Reference Name**: `fraud_check`
+- **Method**: `POST`
+- **URL**: `https://api.example.com/verify`
+- **Body**:
+
+  ```json
+  {
+    "userId": "{{data.user_id}}",
+    "phone": "{{data.phone_number}}"
+  }
+  ```

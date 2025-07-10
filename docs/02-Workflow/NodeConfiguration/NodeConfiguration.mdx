@@ -1,0 +1,55 @@
+---
+sidebar_position: "1"
+title: "Node Configuration"
+description: "Description of your new file."
+---
+
+Earlier, we covered how to create a workflow and got familiar with the Workflow Editor. Now, let's take a closer look at how each **node** works.
+
+Inside the editor, you build your workflow by connecting nodes — each representing a specific action, condition, or message step. To add a node, click the `+` icon below an existing one. Then click the node to open its configuration panel.
+
+Each node allows you to define how that step behaves. You can:
+
+- Set static values or attach message templates
+- Add conditions, delays, or branching logic
+- In **Advanced workflows**, configure nodes dynamically using **variables** with JSON paths
+
+The sections below cover each node type in detail and explain the options available for configuration.
+
+---
+
+import { Card, CardGroup } from 'nextra-theme-docs';
+
+<CardGroup cols={3}>
+  <Card title="Control Nodes" icon="sparkles" 
+    href="/docs/02-Workflow/NodeConfiguration#ControlNode">
+    Direct workflow paths based on conditions.
+  </Card>
+  <Card title="Wait Node" icon="sparkles" 
+    href="/docs/02-Workflow/NodeConfiguration#WaitNode">
+    Pause workflows for specified durations.
+  </Card>
+  <Card title="HTTP Node" icon="sparkles" 
+    href="/docs/02-Workflow/NodeConfiguration#HTTPNode">
+    Integrate with external APIs.
+  </Card>
+  <Card title="Chat Node" icon="sparkles" 
+    href="/docs/02-Workflow/NodeConfiguration#ChatNode">
+    Interact and wait for recipient responses.
+  </Card>
+  <Card title="Template Node" icon="sparkles" 
+    href="/docs/02-Workflow/NodeConfiguration#TemplateNode">
+    Send messages using predefined templates.
+  </Card>
+  <Card title="Channel Node" icon="sparkles" 
+    href="/docs/02-Workflow/NodeConfiguration#ChannelNode">
+    Deliver direct notifications via specific channels.
+  </Card>
+</CardGroup>
+
+
+---
+
+Once your workflow is designed to match your use case, just click **Publish** to push it live. From there, it’s ready to go — the moment the right trigger fires, your workflow jumps into action\!
+
+Up next, let’s explore how to test your workflow and understand how triggers work behind the scenes.

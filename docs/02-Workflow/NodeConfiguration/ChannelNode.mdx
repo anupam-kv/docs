@@ -1,0 +1,33 @@
+---
+sidebar_position: "6"
+title: 'Channel Node'
+description: 'Description of your new file.'
+---
+
+## Channel Node
+
+The **Channel Node** lets you send a notification through a specific channel (such as Email, SMS, WhatsApp, etc.) using a configured provider. This is different from the Template Node — here, you manually select the provider and specify recipient details instead of using a predefined template.
+
+### Basic Workflow Configuration
+
+In a Basic workflow, the configuration is straightforward:
+
+- **Provider**: Select from a dropdown list of available providers for the chosen channel.
+- **Wait for Delivery Status**: A checkbox to indicate whether the workflow should pause until a delivery status (e.g., delivered or failed) is returned.
+
+This setup works well when you want to quickly trigger a notification using a static provider and recipient details.
+
+### Advanced Workflow Configuration
+
+In an Advanced workflow, this node offers more flexibility:
+
+- **Static Mode** (default view):
+  - **Provider**: Same as in Basic — select a static provider from the dropdown.
+  - **Recipient Field**: Enter the value for the recipient (e.g., Email address, phone number) or use a variable via JSON path (e.g., `{{notify.email}}`).
+  - **Wait for Delivery Status**: Same checkbox as in Basic.
+- **Dynamic Mode** (enabled via toggle switch):
+  When toggled ON, the node supports fully dynamic provider routing:
+  - **Provider Integration name or JSON Path**: Input field to define the integration either directly or via a JSON path (e.g., `{{data.provider_name}}`).
+  - **Provider (dropdown)**: Still available as a fallback or default.
+  - **Recipient Field or JSON Path**: Define where to fetch recipient info dynamically — e.g., `{{notify.sms}}`.
+  - **Wait for Delivery Status**: Optional checkbox to enable delivery-based control logic.

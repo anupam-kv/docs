@@ -30,15 +30,25 @@
             ]
           },
           {
-            "group": "Workflows",
-            "pages": [              
+            "group": "Workflow",
+            "pages": [
               "docs/02-Workflow/WorkflowOverview",
               "docs/02-Workflow/CreatingWorkflow",
-              "docs/02-Workflow/NodeConfiguration",
+              "docs/02-Workflow/ScheduleWorkflow",
               "docs/02-Workflow/TestTrigger",
-              "docs/02-Workflow/ScheduleWorkflow"
+              "docs/02-Workflow/NodeConfiguration/NodeConfiguration",
+              {
+                "type": "separator",
+                "title": "Node Types"
+              },
+              "docs/02-Workflow/NodeConfiguration/ChannelNode",
+              "docs/02-Workflow/NodeConfiguration/ChatNode",
+              "docs/02-Workflow/NodeConfiguration/ControlNode",
+              "docs/02-Workflow/NodeConfiguration/HTTPNode",
+              "docs/02-Workflow/NodeConfiguration/TemplateNode",
+              "docs/02-Workflow/NodeConfiguration/WaitNode"
             ]
-          },
+          }
           {
             "group": "Templates",
             "pages": [
