@@ -1,11 +1,12 @@
 ---
+sidebar_position: "1"
 title: "Workflows"
 description: "Automate message flows using Siren’s visual workflow builder."
 ---
 
 ## Workflows in Siren
 
-Workflows in **Siren** let you design powerful, no-code automation for how notifications are triggered, routed, personalized, and delivered across multiple channels. They provide a flexible and visual way to build message flows that adapt to your logic and data — without requiring any engineering effort.
+Workflows in **Siren** let you design powerful, no-code automation for how notifications are triggered, routed, personalized, and delivered across multiple channels. They provide a flexible and visual way to build message flows that adapt to your logic and data, without requiring any engineering effort.
 
 Inside the workflow editor, you can define a series of actions and decisions by adding nodes using a guided, point-and-click interface. Each node can be individually configured to control how and when notifications are sent, what data they use, and how the workflow behaves based on dynamic inputs.
 
@@ -14,15 +15,15 @@ Once your workflow is ready, you can **publish** it to make it live. Published w
 - **Via API**, by making a call to Siren’s `/trigger-workflow` endpoint — typically from your application backend or any system event you define.
 - **Via the AI Agent Toolkit**, which can learn from documentation and intelligently trigger the appropriate workflow based on context.
 
-API-triggered workflows are generally called when an event happens in your product — such as a user action or system update. The API payload includes details like the workflow name, recipient information, and any dynamic variables needed for personalization.
+API-triggered workflows are generally called when an event happens in your product, such as a user action or system update. The API payload includes details like the workflow name, recipient information, and any dynamic variables needed for personalization.
 
-Whether you're sending a simple alert or orchestrating a multi-step notification journey, workflows in Siren give you the tools to automate and scale your communication strategy with complete control and visibility.
+Whether sending a simple alert or orchestrating a multi-step notification journey, workflows in Siren give you the tools to automate and scale your communication strategy with complete control and visibility.
 
 ---
 
 ## Types of Workflows in Siren
 
-When creating a new workflow in Siren, you can choose between **Basic** and **Advanced** workflows. Both types use the same visual editor and support the core set of features needed to create end-to-end notification logic — but Advanced workflows offer additional nodes and greater flexibility.
+When creating a new workflow in Siren, you can choose between **Basic** and **Advanced** workflows. Both types use the same visual editor and support the core set of features needed to create end-to-end notification logic, but Advanced workflows offer additional nodes and greater flexibility.
 
 ### Basic Workflow
 
@@ -31,7 +32,7 @@ Best suited for simple automation flows, Basic workflows support:
 - **Wait Node** – Add a delay between steps using a fixed duration (in days, hours, minutes, seconds).
 - **Control Nodes**:
   - **If Node** – Branch the flow based on a true/false condition.
-  - **Switch Node** – Route to multiple paths based on a specific field value.
+  - **Switch Node** – Route to multiple paths based on use case.
 
 Basic workflows are ideal when the logic is straightforward and does not require real-time external data or dynamic configuration.
 
@@ -40,10 +41,82 @@ Basic workflows are ideal when the logic is straightforward and does not require
 Advanced workflows offer everything available in Basic workflows, plus additional features for more complex, dynamic use cases:
 
 - **HTTP Node** – Make API calls to external services and use the response to shape your workflow logic.
-- **Chat Node** – Leverage Siren’s AI capabilities to generate content or perform actions based on your documentation.
+- **Chat Node** –Waits for a response from the recipient and lets you define actions based on their reply or a timeout if no response is received.
 
 Advanced workflows also support **dynamic variables** across all nodes. For instance:
 
-- In the **Wait Node**, in addition to setting a fixed duration, you can use a variable from the input payload (via JSON path) to define how long to wait — enabling fully dynamic timing based on real-time data.
+- In the **Wait Node**, in addition to setting a fixed duration, you can use a variable from the input payload (via JSON path) to define how long to wait, enabling fully dynamic timing based on real-time data.
 
 This makes Advanced workflows more powerful and adaptable when you're working with rich data inputs, personalized flows, or need to coordinate actions with external systems.
+
+## Workflow Editor UI
+
+Once you've created and saved a workflow, you'll enter the **Workflow Editor**, a visual interface where you can design, test, and configure your workflow.
+
+![Workflow Editor canvas](/assets/images/editor/start-node.png)
+
+### Editor Layout
+
+The editor starts with a single **Start Node**, which is fixed and cannot be modified. All nodes are added from this starting point.
+
+To add a new step, click the **`+`** icon below any node. This opens a list of available nodes (such as Wait, If, Switch, Template, HTTP, or Chat). Depending on whether you've created a **Basic** or **Advanced** workflow, the available nodes may differ, but all compatible options are shown in the list.
+
+> We cover node types and their behavior in more detail in the [Create Workflow](../create-workflow) page.
+
+---
+
+### Node Configuration
+
+Each node you add to the canvas opens a configuration panel when clicked. From there, you can:
+
+- Select or attach templates
+- Set static values (e.g., a 10-second wait)
+- In Advanced workflows, use **variables** with JSON paths to dynamically configure node behavior
+- Add conditional branches, fallback logic.etc
+
+---
+
+### Test Mode
+
+You can toggle between **Editor** and **Test** mode at the top of the screen.
+
+![Test Mode](/assets/images/editor/test-mode.png)
+
+- **Editor Mode** lets you build and edit the workflow.
+- **Test Mode** allows you to simulate how the workflow would run using mock data.
+
+In **Advanced workflows only**, you'll see a **Test Code** panel on the left. This lets you run the flow with sample values and observe how the logic behaves.
+
+Click **Run flow** to test the execution path in real time.
+
+---
+
+### 🧾 Input JSON Panel
+
+Whether you're in Editor or Test mode, you’ll have access to the **Input JSON** panel.
+
+![Input JSON](/assets/images/editor/input-json.png)
+
+The input JSON is divided into two keys:
+
+- `data`: Custom data used inside nodes or for conditions
+- `notify`: Recipient details mapped to various channels
+
+In **Advanced workflows**, this JSON is editable. You can update values in real time to simulate dynamic content or branching conditions during testing.
+
+Here’s an example structure:
+
+```json
+{
+  "data": {
+    "userId": "abc123",
+    "event": "signup"
+  },
+  "notify": {
+    "email": "user@example.com",
+    "sms": "+911234567890"
+  }
+}
+```
+
+Now, let us start [designing your workflow](/api-reference/endpoint/create)
