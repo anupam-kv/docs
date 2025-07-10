@@ -21,32 +21,35 @@ Whether sending a simple alert or orchestrating a multi-step notification journe
 
 ---
 
-## Types of Workflows in Siren
+## Types of Workflows
 
-When creating a new workflow in Siren, you can choose between **Basic** and **Advanced** workflows. Both types use the same visual editor and support the core set of features needed to create end-to-end notification logic, but Advanced workflows offer additional nodes and greater flexibility.
+When creating a new workflow in Siren, you choose between **Basic** and **Advanced** workflows. Both types leverage the same intuitive visual editor and provide the core features for building end-to-end notification logic. However, **Advanced workflows** unlock additional capabilities and offer greater flexibility for complex scenarios.
 
-### Basic Workflow
+### Basic Workflow: Streamlined Automation
 
-Best suited for simple automation flows, Basic workflows support:
+**Basic workflows** are perfect for straightforward automation flows. They're designed for simplicity and efficiency when your logic is predictable and doesn't require dynamic interaction with external systems.
 
-- **Wait Node** – Add a delay between steps using a fixed duration (in days, hours, minutes, seconds).
+Basic workflows support:
+
+- **Wait Node**: Introduce delays between steps using a fixed duration (in days, hours, minutes, seconds).
 - **Control Nodes**:
-  - **If Node** – Branch the flow based on a true/false condition.
-  - **Switch Node** – Route to multiple paths based on use case.
+  - **If Node**: Branch your flow based on a simple true/false condition.
+  - **Switch Node**: Route the workflow to multiple paths based on a predefined value.
 
-Basic workflows are ideal when the logic is straightforward and does not require real-time external data or dynamic configuration.
+Choose a Basic workflow when your automation needs are clear-cut and don't involve real-time external data or highly dynamic configurations.
 
-### Advanced Workflow
+---
 
-Advanced workflows offer everything available in Basic workflows, plus additional features for more complex, dynamic use cases:
+### Advanced Workflow: Dynamic & Extensible Automation
 
-- **HTTP Node** – Make API calls to external services and use the response to shape your workflow logic.
-- **Chat Node** –Waits for a response from the recipient and lets you define actions based on their reply or a timeout if no response is received.
+**Advanced workflows** provide all the features of Basic workflows, plus powerful additions for more complex, dynamic, and data-driven use cases. They allow your automation to react to external systems and adapt to rich data inputs.
 
-Advanced workflows also support **dynamic variables** across all nodes. For instance:
+Advanced workflows include:
 
-- In the **Wait Node**, in addition to setting a fixed duration, you can use a variable from the input payload (via JSON path) to define how long to wait, enabling fully dynamic timing based on real-time data.
+- **HTTP Node**: Make **API calls to external services**. You can use the response data to shape subsequent workflow logic, enabling seamless integration with your existing infrastructure.
+- **Chat Node**: Facilitate human interaction by **pausing the workflow to await a recipient's response**. Define actions based on their reply or a timeout if no response is received.
+- **Dynamic Variables across all Nodes**: Beyond fixed settings, you can use **JSON paths** to dynamically configure _any_ node's parameters based on real-time data from your workflow input or prior node outputs. For example, a **Wait Node** can dynamically set its duration based on a variable in your payload, or a **Template Node** can dynamically select which template to use.
 
-This makes Advanced workflows more powerful and adaptable when you're working with rich data inputs, personalized flows, or need to coordinate actions with external systems.
+Opt for an Advanced workflow when you're working with rich data inputs, need personalized flows, or require robust coordination and data exchange with external systems.
 
 Now that you understand what workflows are, let’s explore how to [create and design one using the Workflow Editor](../create-workflow).

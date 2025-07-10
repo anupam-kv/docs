@@ -34,7 +34,9 @@
             "pages": [              
               "docs/02-Workflow/WorkflowOverview",
               "docs/02-Workflow/CreatingWorkflow",
-              "docs/02-Workflow/NodeConfiguration"
+              "docs/02-Workflow/NodeConfiguration",
+              "docs/02-Workflow/TestTrigger",
+              "docs/02-Workflow/ScheduleWorkflow"
             ]
           },
           {
