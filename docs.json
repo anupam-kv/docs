@@ -53,7 +53,9 @@
           {
             "group": "Templates",
             "pages": [
-              "docs/03-Templates/TemplatesOverview"
+              "docs/03-Templates/TemplatesOverview",
+              "docs/03-Templates/CreateTemplate",
+              "docs/03-Templates/TemplateConfiguration"
             ]
           },
           {
