@@ -21,11 +21,11 @@ In an Advanced workflow, this node offers more flexibility:
 
 - **Static Mode** (default view):
   - **Provider**: Same as in Basic — select a static provider from the dropdown.
-  - **Recipient Field**: Enter the value for the recipient (e.g., Email address, phone number) or use a variable via JSON path (e.g., `{{notify.email}}`).
+  - **Recipient Field**: Enter the value for the recipient (e.g., Email address, phone number) or use a variable via JSON path (e.g., `${workflow.input.recipient.email}`).
   - **Wait for Delivery Status**: Same checkbox as in Basic.
 - **Dynamic Mode** (enabled via toggle switch):
   When toggled ON, the node supports fully dynamic provider routing:
-  - **Provider Integration name or JSON Path**: Input field to define the integration either directly or via a JSON path (e.g., `{{data.provider_name}}`).
+  - **Provider Integration name or JSON Path**: Input field to define the integration either directly or via a JSON path (e.g., `${workflow.input.provider_name}`).
   - **Provider (dropdown)**: Still available as a fallback or default.
-  - **Recipient Field or JSON Path**: Define where to fetch recipient info dynamically — e.g., `{{notify.sms}}`.
+  - **Recipient Field or JSON Path**: Define where to fetch recipient info dynamically — e.g., `${workflow.input.notify.sms}`.
   - **Wait for Delivery Status**: Optional checkbox to enable delivery-based control logic.
