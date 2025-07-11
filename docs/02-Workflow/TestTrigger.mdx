@@ -46,6 +46,65 @@ Example:
 
 After your workflow is tested and you're satisfied with its behavior, click **Publish** in the top-right corner to make it live.
 
-Once published, a workflow can be triggered in two ways:
+Once published, you can trigger the workflow dynamically via API, either as a **single trigger** or a **bulk trigger**, depending on your use case.
 
-### Via API
+---
+
+## Trigger Types
+
+### Single Trigger
+
+Use this when you want to execute a workflow for a single recipient.
+
+- Endpoint: `POST https://api.trysiren.io/api/v2/workflows/trigger`
+- The `notify` field is an object
+- The `data` field is shared context used throughout the workflow
+
+#### Sample Request
+
+```bash
+curl -X POST https://api.trysiren.io/api/v2/workflows/trigger \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <YOUR_API_TOKEN>" \
+  -d '{
+    "workflowName": "otp",
+    "data": {
+      "subject": "otp verification"
+    },
+    "notify": {
+      "notificationType": "email",
+      "recipient": "example@example.com"
+    }
+  }'
+```
+
+### Bulk Trigger
+
+If you need to send notifications to multiple recipients at once, **Bulk Trigger** is the way to go.
+
+In a bulk trigger, the `notify` field is an array — each object in this array represents a unique recipient. The workflow runs once for each recipient object.
+
+This is useful when sending messages like alerts, reminders, or promotions to a list of users in one API call.
+
+#### Example
+
+```json
+{
+  "workflowName": "otp",
+  "data": {
+    "subject": "otp verification"
+  },
+  "notify": [
+    {
+      "notificationType": "email",
+      "recipient": "example@example.com"
+    },
+    {
+      "notificationType": "sms",
+      "recipient": "+1234567890"
+    }
+  ]
+}
+```
+
+Go to [API reference](/docs/API References) to see more details about the API Configurations.
