@@ -14,7 +14,7 @@ Use the **HTTP Node** to call an external API during your workflow — for examp
 
 When you add an HTTP Node, you'll see the following fields:
 
-- **Reference Name**: A label used to reference this API’s response in later parts of the workflow (e.g., `user_verification`).
+- **Reference Name**: A label used to reference this API’s response in later parts of the workflow.
 - **Continue Workflow on API Failure**: If checked, the workflow continues even if the API call fails. Useful for optional or non-blocking requests.
 - **Method**: Choose the type of HTTP request from the following options: `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `OPTIONS`, `HEAD`.
 - **URL**: Enter the **API endpoint link** you want to call.
@@ -32,14 +32,14 @@ Let’s say you want to check if a user passed a fraud check before sending them
 
 Here’s how you might configure the HTTP Node:
 
-- **Reference Name**: `fraud_check`
+- **Reference Name**: Reference name that is generated
 - **Method**: `POST`
 - **URL**: `https://api.example.com/verify`
 - **Body**:
 
   ```json
   {
-    "userId": "{{data.user_id}}",
+    "userId": "{{workflow.data.user_id}}",
     "phone": "{{data.phone_number}}"
   }
   ```

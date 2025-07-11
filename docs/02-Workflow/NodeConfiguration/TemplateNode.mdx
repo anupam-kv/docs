@@ -30,7 +30,7 @@ In an Advanced workflow, the Template Node offers more flexibility:
 
 Under **Dynamic**, you’ll see the following fields:
 
-- **Template Variable**: Input field where you provide the JSON path to fetch the template name at runtime (e.g., `{{data.template_name}}`).
+- **Template Variable**: Input field where you provide the JSON path to fetch the template name at runtime (e.g., `${workflow.input.data.template_name}`).
 - **Template Version**: Optional field to specify a particular version of the template if needed.
 - **Variable Object Path**: Defines the path to the variables object (e.g., `{{data.vars}}`) that will be substituted into the template during execution.
 

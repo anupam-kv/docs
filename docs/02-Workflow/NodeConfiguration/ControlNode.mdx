@@ -42,27 +42,27 @@ In an Advanced workflow, the If Node becomes more powerful. You can:
 
 > #### Example
 >
-> Imagine you're verifying a sensitive action like a payment or login:
+> Imagine you need to send notification to a user whose ID is verified and check their country if India use one provider, if USA use another provider. So use the if node in advanced workflow for this.
 >
-> - A user submits their **OTP** during the verification process.
-> - Your backend fetches the correct OTP from the database and passes it to Siren.
+> - A user submits their **country**, and if their ID is **verified or not verified**.
+> - Your backend fetches the corresponding details of the user from the database and passes it to Siren.
 >
 > You can configure the **If Node** like this:
 >
-> - **Value A**: `${workflow.input.user.otp}` (value retrieved from your database)
+> - **Value A**: `${workflow.input.data.country}` (value retrieved from your database)
 > - **Type**: `STRING`
 > - **Operator**: `EQUALS`
-> - **Value B**: `data.user_input_otp` (the OTP the user just entered)
+> - **Value B**: `India` (the Country the user entered)
 >
-> This checks if the submitted OTP matches the stored one.
+> This checks if the submitted country matches the required one.
 >
-> Now imagine you’ve added an **HTTP Node** earlier in the workflow that fetches fraud risk info for a user.\
+> Now, imagine you’ve added an **HTTP Node** earlier in the workflow that fetches fraud risk info for a user.\
 > You can use that API’s response too:
 >
-> - **Value A**: `http.fraud_check.status`
+> - **Value A**: `${workflow.input.data.verification}`
 > - **Type**: `STRING`
 > - **Operator**: `EQUALS`
-> - **Value B**: `approved`
+> - **Value B**: `verified`
 >
 > These conditions can then be combined using **AND** logic — so the workflow proceeds only if both checks pass.
 
@@ -88,7 +88,7 @@ In an Advanced workflow, you'll see a **Switch Expression** field instead of a n
 
 ![Switch Node - Advanced](/assets/images/editor/switch-advanced.png)
 
-- Enter a **JSON variable path** (e.g., `data.channel`) to evaluate dynamically.
+- Enter a **JSON variable path** (e.g., `${workflow.input.data.}`) to evaluate dynamically.
 - Add up to 9 cases to match the expression.
 - Just like in Basic mode, one fallback case is always present by default.
 
@@ -96,7 +96,7 @@ In an Advanced workflow, you'll see a **Switch Expression** field instead of a n
 >
 > Suppose you want to notify users based on their preferred channel.
 >
-> - Use `data.channel` as your **Switch Expression**
+> - Use `${workflow.input.data.channel}` as your **Switch Expression**
 > - Add cases like `email`, `sms`, and `push`
 > - Connect each case to the respective channel’s template node
 > - Let the fallback case handle any unknown or missing channel values
