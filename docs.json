@@ -46,8 +46,8 @@
                   "docs/02-Workflow/NodeConfiguration/ChannelNode"
                 ]
               },
-              "docs/02-Workflow/ScheduleWorkflow",
-              "docs/02-Workflow/TestTrigger"
+              "docs/02-Workflow/TestTrigger",
+              "docs/02-Workflow/ScheduleWorkflow"
             ]
           },
           {
