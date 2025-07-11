@@ -1,0 +1,81 @@
+---
+sidebar_position: "5"
+title: "Scheduled Workflows"
+description: "Configure recurring workflow runs based on time intervals."
+---
+
+Siren allows you to schedule workflows to run automatically at specific intervals without manual triggers. This is useful for recurring tasks like sending daily reports, reminders, or maintenance notifications.
+
+You can access the **Schedules** section from the left navigation panel under **Workflows \> Schedules**.
+
+## Schedule List View
+
+Once inside, you'll see:
+
+- A list of all previously scheduled workflows
+- A **Search** bar to quickly find a schedule by name
+- Filters to refine the list
+- An **\+ Add Schedule** button to create a new schedule
+
+## Creating a New Schedule
+
+Clicking on **\+ Add Schedule** will prompt you to enter a **Schedule Name**. Once added, you're redirected to the schedule configuration screen.
+
+### Schedule Configuration Options
+
+On the schedule creation screen, you’ll find the following input fields:
+
+- **Workflow**: Select the workflow you want to schedule.
+- **Time Zone**: Choose the time zone in which the schedule should run.
+- **Starts**: Pick a date for the schedule to begin (`YYYY-MM-DD`).
+- **Runs**: Choose how often the workflow should run:
+  - **Once** – Specify a time (`HH:mm` format).
+  - **Daily** – Select a time, and optionally an end date.
+  - **Weekly** – Pick specific weekdays and a time.
+  - **Monthly** – Choose:
+    - First day of the month
+    - Last day of the month
+    - Custom day of the month
+- **Ends**: (only for recurring schedules)
+  - **Never** – The schedule runs indefinitely.
+  - **On** – Specify a date to stop the schedule.
+
+### JSON Body
+
+Users have the option to input a **JSON body** for the workflow trigger.
+
+This JSON allows you to:
+
+- Pass dynamic values to the workflow
+- Provide user-specific data under the `data` object
+- Specify recipient details under the `notify` object
+
+Example:
+
+```json
+{
+  "data": {
+    "name": "Ravi",
+    "action": "login"
+  },
+  "notify": {
+    "email": "ravi@example.com",
+    "sms": "+911234567890"
+  }
+}
+```
+
+## Managing the Schedules
+
+Once you've configured everything and click **Update**, the Schedule will be active
+
+After scheduling:
+
+- A Pause Schedule button will appear in the bottom right.
+  - You can use this to temporarily pause the scheduled workflow without deleting it.
+  - To restart it, click Resume and the schedule will continue from its configured timing.
+- You can view all existing schedules and their current status in the **Schedule List**. To modify a schedule, simply click the Edit button next to it in the list.
+
+<Note>
+  No actions can be performed for completed schedules.
+</Note>

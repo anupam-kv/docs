@@ -26,41 +26,52 @@
             "pages": [
               "docs/01 - Getting Started/Overview",
               "docs/01 - Getting Started/Quick-start-Guide",
-              "docs/01 - Getting Started/QuickSend",
-              "docs/01 - Getting Started/Migrate to Siren"
+              "docs/01 - Getting Started/QuickSend"
             ]
           },
           {
             "group": "Workflows",
             "pages": [
-              "docs/02 - Workflows/Sending-your-first-Notification",
-              "docs/02 - Workflows/Workflow Overview",
-              "docs/02 - Workflows/Creating Workflows",
-              "docs/02 - Workflows/Design Workflow Logic",
-              "docs/02 - Workflows/Test & Trigger",
-              "docs/02 - Workflows/Manage Workflows"
+              "docs/02-Workflow/WorkflowOverview",
+              "docs/02-Workflow/CreatingWorkflow",
+              "docs/02-Workflow/NodeConfiguration/NodeConfiguration",
+              {
+                "group": "Node Types",
+                "pages": [
+                  "docs/02-Workflow/NodeConfiguration/ControlNode",
+                  "docs/02-Workflow/NodeConfiguration/WaitNode",
+                  "docs/02-Workflow/NodeConfiguration/HTTPNode",
+                  "docs/02-Workflow/NodeConfiguration/ChatNode",
+                  "docs/02-Workflow/NodeConfiguration/TemplateNode",
+                  "docs/02-Workflow/NodeConfiguration/ChannelNode"
+                ]
+              },
+              "docs/02-Workflow/TestTrigger",
+              "docs/02-Workflow/ScheduleWorkflow"
             ]
           },
           {
             "group": "Templates",
             "pages": [
-              "docs/03 - Templates/Overview",
+              "docs/03-Templates/TemplatesOverview",
+              "docs/03-Templates/CreateTemplate",
               {
-                "group": "Creating Template",
+                "group": "Template Configurations",
                 "pages": [
-                  "docs/03 - Templates/Creating Template/Dynamic Chat Template",
-                  "docs/03 - Templates/Creating Template/Email Template",
-                  "docs/03 - Templates/Creating Template/In-App Template",
-                  "docs/03 - Templates/Creating Template/Line Template",
-                  "docs/03 - Templates/Creating Template/Push Notification Template",
-                  "docs/03 - Templates/Creating Template/SMS Template",
-                  "docs/03 - Templates/Creating Template/Whatsapp Template"
+                  "docs/03-Templates/SMS-Template",
+                  "docs/03-Templates/Email-Template",
+                  "docs/03-Templates/Push-Template",
+                  "docs/03-Templates/Whatsapp-Template",
+                  "docs/03-Templates/Slack-Template",
+                  "docs/03-Templates/Teams-Template",
+                  "docs/03-Templates/Discord-Template",
+                  "docs/03-Templates/InApp-Template",
+                  "docs/03-Templates/LINE-Template"
                 ]
               },
-              "docs/03 - Templates/Duplicate Template",
-              "docs/03 - Templates/Tag Template"
+              "docs/03-Templates/TemplateConfiguration"
             ]
-          },  
+          },
           {
             "group": "Channels & Providers",
             "pages": [
@@ -131,13 +142,13 @@
           }
         ]
       },
-       {
+      {
         "tab": "AI Agent Toolkit",
         "groups": [
           {
             "group": "AI Agent Toolkit",
             "pages": [
-              "docs/AI Agent toolkit"
+              "docs/07 - AI Agent Toolkit/Overview"
             ]
           }
         ]

@@ -1,0 +1,37 @@
+---
+sidebar_position: "5"
+title: "Template Node"
+description: "Description of your new file."
+---
+
+The **Template Node** is used to send messages using predefined templates across supported channels such as Email, SMS, Push, WhatsApp, and more.
+
+To learn how to create, edit, and manage templates, visit the [Templates](TemplatesOverview) section.
+
+### Basic Workflow Configuration
+
+In a Basic workflow:
+
+- The **Parameter** section includes a **Template dropdown**.
+- All available templates are listed.
+- Templates that share the **same tag** as the workflow will appear **at the top** of the list for quicker access.
+
+You simply select the desired template, and the message will be sent using that configuration.
+
+---
+
+### Advanced Workflow Configuration
+
+In an Advanced workflow, the Template Node offers more flexibility:
+
+- A **radio button** lets you choose between:
+  - **Static**: Works the same way as Basic — choose a template from the dropdown list.
+  - **Dynamic**: Use variables to dynamically select the template and its version during runtime.
+
+Under **Dynamic**, you’ll see the following fields:
+
+- **Template Variable**: Input field where you provide the JSON path to fetch the template name at runtime (e.g., `${workflow.input.data.template_name}`).
+- **Template Version**: Optional field to specify a particular version of the template if needed.
+- **Variable Object Path**: Defines the path to the variables object (e.g., `{{data.vars}}`) that will be substituted into the template during execution.
+
+This makes it possible to personalize which template gets triggered — and what values are passed — based on real-time inputs.

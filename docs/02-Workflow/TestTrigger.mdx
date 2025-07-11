@@ -1,0 +1,110 @@
+---
+sidebar_position: "4"
+title: "Test & Trigger"
+description: "Learn how to test and trigger workflows in Siren"
+---
+
+# Testing Workflow
+
+In **Advanced workflows**, Siren provides a powerful **Test Mode** inside the Workflow Editor to simulate how your flow will execute in real-time.
+
+To enter test mode:
+
+- In the top navigation bar of the Workflow Editor, toggle from **Editor** to **Test**.
+- You’ll now see an **Input JSON** panel on the left side of the screen. This allows you to modify and test with different input values.
+
+> The Input JSON consists of two keys:
+>
+> - `data`: Custom values used inside the workflow, such as names, flags, or attributes used in conditions or variable substitution.
+> - `notify`: Recipient details like email, phone number, or push token.
+
+Example:
+
+```json
+{
+  "data": {
+    "event": "OTP",
+    "user_type": "premium"
+  },
+  "notify": {
+    "email": "jane@example.com",
+    "sms": "+911234567890"
+  }
+}
+```
+
+- You can edit the values in this panel freely to simulate how your workflow would behave with real data.
+- Click Run Flow to test the execution. You'll see which path is taken and whether nodes succeed or fail.
+
+<Note>
+  In **Test Mode**, actual notifications are **not** sent — this is a dry run for validation and flow behavior.
+</Note>
+
+---
+
+# Triggering Workflow
+
+After your workflow is tested and you're satisfied with its behavior, click **Publish** in the top-right corner to make it live.
+
+Once published, you can trigger the workflow dynamically via API, either as a **single trigger** or a **bulk trigger**, depending on your use case.
+
+---
+
+## Trigger Types
+
+### Single Trigger
+
+Use this when you want to execute a workflow for a single recipient.
+
+- Endpoint: `POST https://api.trysiren.io/api/v2/workflows/trigger`
+- The `notify` field is an object
+- The `data` field is shared context used throughout the workflow
+
+#### Sample Request
+
+```bash
+curl -X POST https://api.trysiren.io/api/v2/workflows/trigger \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <YOUR_API_TOKEN>" \
+  -d '{
+    "workflowName": "otp",
+    "data": {
+      "subject": "otp verification"
+    },
+    "notify": {
+      "notificationType": "email",
+      "recipient": "example@example.com"
+    }
+  }'
+```
+
+### Bulk Trigger
+
+If you need to send notifications to multiple recipients at once, **Bulk Trigger** is the way to go.
+
+In a bulk trigger, the `notify` field is an array — each object in this array represents a unique recipient. The workflow runs once for each recipient object.
+
+This is useful when sending messages like alerts, reminders, or promotions to a list of users in one API call.
+
+#### Example
+
+```json
+{
+  "workflowName": "otp",
+  "data": {
+    "subject": "otp verification"
+  },
+  "notify": [
+    {
+      "notificationType": "email",
+      "recipient": "example@example.com"
+    },
+    {
+      "notificationType": "sms",
+      "recipient": "+1234567890"
+    }
+  ]
+}
+```
+
+Go to [API reference](/docs/API References) to see more details about the API Configurations.

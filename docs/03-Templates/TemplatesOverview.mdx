@@ -1,0 +1,110 @@
+---
+sidebar_position: "1"
+title: "Template Overview"
+description: "Understand what templates are, how they work across channels, and how Siren lets you manage them efficiently."
+---
+
+Templates in **Siren** are reusable message formats that let you design consistent and personalized content for notifications. These templates can be used across workflows to communicate with users via multiple channels such as Email, SMS, Push, WhatsApp, In-App, and more.
+
+Templates act as the foundation for delivering dynamic and personalized experiences across your product touchpoints.
+
+---
+
+## Why Use Templates?
+
+- **Maintain consistency across Channels:** Using templates ensures that your messages are consistent in tone, structure, and formatting — whether you're sending an SMS, an email, or a push notification. You don’t have to rewrite or reformat every message manually.
+- **Customize messaging for your brand:**
+  - Add your logo, colors, and brand tone in emails
+  - Include brand-specific sign-offs, headers, or imagery
+  - Align styling across all notifications
+- **Personalize with variables:** Siren templates support **dynamic content insertion** using variables (like user name, OTP, transaction ID). This allows you to personalize messages based on the recipient’s data while still using a single template.
+- **Reuse Across Workflows:** Once created, templates can be reused across multiple workflows or campaigns, saving time and ensuring standardization.
+  - No need to duplicate message content every time.
+  - Version control and history help you track changes easily.
+
+---
+
+## Supported Channels
+
+Siren supports templates across **9 channels**:
+
+<CardGroup cols={3}>
+  <Card title="SMS" icon="Message" href="/docs/03-Templates/Template%20Configurations/SMS-Template">
+    
+  </Card>
+  <Card title="Email" icon="google" href="/docs/03-Templates/Template%20Configurations/Email-Template">
+    
+  </Card>
+  <Card title="Push Notification" icon="message" href="/docs/03-Templates/Template%20Configurations/Push-Template">
+    
+  </Card>
+  <Card title="Whatsapp" icon="Whatsapp" href="/docs/03-Templates/Template%20Configurations/Whatsapp-Template">
+    
+  </Card>
+  <Card title="Slack" icon="slack" href="/docs/03-Templates/Template%20Configurations/Slack-Template">
+    
+  </Card>
+  <Card title="Microsoft Teams" icon="Microsoft " href="/docs/03-Templates/Template%20Configurations/Teams-Template">
+    
+  </Card>
+  <Card title="Discord" icon="discord" href="/docs/03-Templates/Template%20Configurations/Discord-Template">
+    
+  </Card>
+  <Card title="In-App Messages" icon="Siren" href="/docs/03-Templates/Template%20Configurations/InApp-Template">
+    
+  </Card>
+  <Card title="LINE" icon="Line" href="/docs/03-Templates/Template%20Configurations/LINE-Template">
+    
+  </Card>
+</CardGroup>
+
+You can configure templates for **one or more channels** within the same template. This means a single template can include content for, say, Email \+ SMS \+ In-App together — enabling true multichannel delivery from a unified template.
+
+---
+
+## Multi-Channel Template Structure
+
+When creating a template, you can add and configure each channel independently. Each channel supports different fields based on its capabilities. For example:
+
+- **Email** supports subject, HTML body, attachments, and advanced headers.
+- **SMS** allows you to set unicode/flash message types and a DLT template ID.
+- **Push** supports mobile preview toggles, TTL, image/icon URL, and platform-specific behavior.
+
+To learn more, see [Channel Configurations](./channel-configs).
+
+---
+
+## Tags
+
+Each template can be associated with one or more **tags**. Tags help categorize and group templates by use case, department, product feature, or campaign.
+
+When you select templates in workflows or campaigns, **tags help filter and prioritize relevant templates**, especially useful when dealing with a large library.
+
+> Templates with the same tag as the workflow are shown at the top in dropdowns when selecting a template.
+
+---
+
+## Template Versioning
+
+Every time a published template is updated, Siren maintains a version history. You can:
+
+- View changes across different versions
+- Restore to an older version if needed
+- Keep a clean audit trail of edits
+
+This helps you maintain content governance while iterating on templates.
+
+---
+
+## Where Templates Are Used
+
+Templates are used primarily in:
+
+- **Workflows** – Triggered notifications based on logic, rules, and data.
+- **Campaigns** – Bulk or segmented sends for promotional or event-based messaging.
+
+To learn how to create and manage templates, visit the [Create & Manage](./create-manage) page.
+
+To see how templates are used inside workflows, check out [Use in Workflows](./using-in-workflows).
+
+---
