@@ -55,6 +55,20 @@
             "pages": [
               "docs/03-Templates/TemplatesOverview",
               "docs/03-Templates/CreateTemplate",
+              {
+                "group": "Template Configurations",
+                "pages": [
+                  "docs/03-Templates/SMS-Template",
+                  "docs/03-Templates/Email-Template",
+                  "docs/03-Templates/Push-Template",
+                  "docs/03-Templates/Whatsapp-Template",
+                  "docs/03-Templates/Slack-Template",
+                  "docs/03-Templates/Teams-Template",
+                  "docs/03-Templates/Discord-Template",
+                  "docs/03-Templates/InApp-Template",
+                  "docs/03-Templates/LINE-Template"
+                ]
+              },
               "docs/03-Templates/TemplateConfiguration"
             ]
           },
